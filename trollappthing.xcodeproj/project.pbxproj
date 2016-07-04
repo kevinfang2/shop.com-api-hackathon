@@ -1,0 +1,719 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0AB52A7A1D2213C2003B5C0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB52A791D2213C2003B5C0A /* main.m */; };
+		0AB52A7D1D2213C2003B5C0A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB52A7C1D2213C2003B5C0A /* AppDelegate.m */; };
+		0AB52A831D2213C2003B5C0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AB52A811D2213C2003B5C0A /* Main.storyboard */; };
+		0AB52A851D2213C2003B5C0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AB52A841D2213C2003B5C0A /* Assets.xcassets */; };
+		0AB52A881D2213C2003B5C0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AB52A861D2213C2003B5C0A /* LaunchScreen.storyboard */; };
+		0AB52A931D2213C2003B5C0A /* trollappthingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB52A921D2213C2003B5C0A /* trollappthingTests.m */; };
+		0AB52A9E1D2213C2003B5C0A /* trollappthingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB52A9D1D2213C2003B5C0A /* trollappthingUITests.m */; };
+		0AD6A2841D29C81100AE707C /* LandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD6A2831D29C81100AE707C /* LandingViewController.m */; };
+		0AD6A2871D29D75300AE707C /* imagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD6A2861D29D75300AE707C /* imagesViewController.m */; };
+		0AFAC79C1D29E12A001B25A7 /* cameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AFAC79B1D29E12A001B25A7 /* cameraViewController.m */; };
+		0AFAC79F1D29F92D001B25A7 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AFAC79E1D29F92D001B25A7 /* CollectionViewCell.m */; };
+		5062DFC4471133ABDDDF32E4 /* libPods-trollappthingUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 676341FF75031407AC359521 /* libPods-trollappthingUITests.a */; };
+		8790F76481DC03E08C6AD60B /* libPods-trollappthing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5894FB5426299594A39FF0AB /* libPods-trollappthing.a */; };
+		973016A88DA24EF3558749AC /* libPods-trollappthingTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44D1785E2835DDA2FD455779 /* libPods-trollappthingTests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0AB52A8F1D2213C2003B5C0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0AB52A6D1D2213C2003B5C0A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0AB52A741D2213C2003B5C0A;
+			remoteInfo = trollappthing;
+		};
+		0AB52A9A1D2213C2003B5C0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0AB52A6D1D2213C2003B5C0A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0AB52A741D2213C2003B5C0A;
+			remoteInfo = trollappthing;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0AB52A751D2213C2003B5C0A /* trollappthing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trollappthing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AB52A791D2213C2003B5C0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0AB52A7B1D2213C2003B5C0A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0AB52A7C1D2213C2003B5C0A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0AB52A821D2213C2003B5C0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0AB52A841D2213C2003B5C0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0AB52A871D2213C2003B5C0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0AB52A891D2213C2003B5C0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AB52A8E1D2213C2003B5C0A /* trollappthingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = trollappthingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AB52A921D2213C2003B5C0A /* trollappthingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = trollappthingTests.m; sourceTree = "<group>"; };
+		0AB52A941D2213C2003B5C0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AB52A991D2213C2003B5C0A /* trollappthingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = trollappthingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AB52A9D1D2213C2003B5C0A /* trollappthingUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = trollappthingUITests.m; sourceTree = "<group>"; };
+		0AB52A9F1D2213C2003B5C0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AD6A2821D29C81100AE707C /* LandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingViewController.h; sourceTree = "<group>"; };
+		0AD6A2831D29C81100AE707C /* LandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingViewController.m; sourceTree = "<group>"; };
+		0AD6A2851D29D75300AE707C /* imagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imagesViewController.h; sourceTree = "<group>"; };
+		0AD6A2861D29D75300AE707C /* imagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imagesViewController.m; sourceTree = "<group>"; };
+		0AFAC79A1D29E12A001B25A7 /* cameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cameraViewController.h; sourceTree = "<group>"; };
+		0AFAC79B1D29E12A001B25A7 /* cameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cameraViewController.m; sourceTree = "<group>"; };
+		0AFAC79D1D29F92D001B25A7 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		0AFAC79E1D29F92D001B25A7 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		1B40208D4CFDED030AC3237D /* Pods-trollappthingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trollappthingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-trollappthingTests/Pods-trollappthingTests.release.xcconfig"; sourceTree = "<group>"; };
+		2240FF4C6DC6EBE1DA5D9F0C /* Pods-trollappthingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trollappthingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-trollappthingUITests/Pods-trollappthingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		244272B0AD26861BBE4758F6 /* Pods-trollappthingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trollappthingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-trollappthingTests/Pods-trollappthingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		44D1785E2835DDA2FD455779 /* libPods-trollappthingTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-trollappthingTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5894FB5426299594A39FF0AB /* libPods-trollappthing.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-trollappthing.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		676341FF75031407AC359521 /* libPods-trollappthingUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-trollappthingUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9057D271EDA58C9543D64E8F /* Pods-trollappthing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trollappthing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-trollappthing/Pods-trollappthing.debug.xcconfig"; sourceTree = "<group>"; };
+		BE27399CAF75420DDDA0873D /* Pods-trollappthing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trollappthing.release.xcconfig"; path = "Pods/Target Support Files/Pods-trollappthing/Pods-trollappthing.release.xcconfig"; sourceTree = "<group>"; };
+		DE45A5AC444060B1A9CAB52F /* Pods-trollappthingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trollappthingUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-trollappthingUITests/Pods-trollappthingUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0AB52A721D2213C2003B5C0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8790F76481DC03E08C6AD60B /* libPods-trollappthing.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AB52A8B1D2213C2003B5C0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				973016A88DA24EF3558749AC /* libPods-trollappthingTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AB52A961D2213C2003B5C0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5062DFC4471133ABDDDF32E4 /* libPods-trollappthingUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0AB52A6C1D2213C2003B5C0A = {
+			isa = PBXGroup;
+			children = (
+				0AB52A771D2213C2003B5C0A /* trollappthing */,
+				0AB52A911D2213C2003B5C0A /* trollappthingTests */,
+				0AB52A9C1D2213C2003B5C0A /* trollappthingUITests */,
+				0AB52A761D2213C2003B5C0A /* Products */,
+				D55D694AC4254ADA776C0DF0 /* Pods */,
+				2530D7BDDBFEE0C0D90A72E0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0AB52A761D2213C2003B5C0A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0AB52A751D2213C2003B5C0A /* trollappthing.app */,
+				0AB52A8E1D2213C2003B5C0A /* trollappthingTests.xctest */,
+				0AB52A991D2213C2003B5C0A /* trollappthingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0AB52A771D2213C2003B5C0A /* trollappthing */ = {
+			isa = PBXGroup;
+			children = (
+				0AB52A7B1D2213C2003B5C0A /* AppDelegate.h */,
+				0AB52A7C1D2213C2003B5C0A /* AppDelegate.m */,
+				0AB52A811D2213C2003B5C0A /* Main.storyboard */,
+				0AFAC79D1D29F92D001B25A7 /* CollectionViewCell.h */,
+				0AFAC79E1D29F92D001B25A7 /* CollectionViewCell.m */,
+				0AFAC79A1D29E12A001B25A7 /* cameraViewController.h */,
+				0AFAC79B1D29E12A001B25A7 /* cameraViewController.m */,
+				0AD6A2851D29D75300AE707C /* imagesViewController.h */,
+				0AD6A2861D29D75300AE707C /* imagesViewController.m */,
+				0AD6A2821D29C81100AE707C /* LandingViewController.h */,
+				0AD6A2831D29C81100AE707C /* LandingViewController.m */,
+				0AB52A841D2213C2003B5C0A /* Assets.xcassets */,
+				0AB52A861D2213C2003B5C0A /* LaunchScreen.storyboard */,
+				0AB52A891D2213C2003B5C0A /* Info.plist */,
+				0AB52A781D2213C2003B5C0A /* Supporting Files */,
+			);
+			path = trollappthing;
+			sourceTree = "<group>";
+		};
+		0AB52A781D2213C2003B5C0A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0AB52A791D2213C2003B5C0A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0AB52A911D2213C2003B5C0A /* trollappthingTests */ = {
+			isa = PBXGroup;
+			children = (
+				0AB52A921D2213C2003B5C0A /* trollappthingTests.m */,
+				0AB52A941D2213C2003B5C0A /* Info.plist */,
+			);
+			path = trollappthingTests;
+			sourceTree = "<group>";
+		};
+		0AB52A9C1D2213C2003B5C0A /* trollappthingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0AB52A9D1D2213C2003B5C0A /* trollappthingUITests.m */,
+				0AB52A9F1D2213C2003B5C0A /* Info.plist */,
+			);
+			path = trollappthingUITests;
+			sourceTree = "<group>";
+		};
+		2530D7BDDBFEE0C0D90A72E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5894FB5426299594A39FF0AB /* libPods-trollappthing.a */,
+				44D1785E2835DDA2FD455779 /* libPods-trollappthingTests.a */,
+				676341FF75031407AC359521 /* libPods-trollappthingUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D55D694AC4254ADA776C0DF0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9057D271EDA58C9543D64E8F /* Pods-trollappthing.debug.xcconfig */,
+				BE27399CAF75420DDDA0873D /* Pods-trollappthing.release.xcconfig */,
+				244272B0AD26861BBE4758F6 /* Pods-trollappthingTests.debug.xcconfig */,
+				1B40208D4CFDED030AC3237D /* Pods-trollappthingTests.release.xcconfig */,
+				DE45A5AC444060B1A9CAB52F /* Pods-trollappthingUITests.debug.xcconfig */,
+				2240FF4C6DC6EBE1DA5D9F0C /* Pods-trollappthingUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0AB52A741D2213C2003B5C0A /* trollappthing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AB52AA21D2213C2003B5C0A /* Build configuration list for PBXNativeTarget "trollappthing" */;
+			buildPhases = (
+				61C8CCCFD764617F9E270C6D /* [CP] Check Pods Manifest.lock */,
+				0AB52A711D2213C2003B5C0A /* Sources */,
+				0AB52A721D2213C2003B5C0A /* Frameworks */,
+				0AB52A731D2213C2003B5C0A /* Resources */,
+				3FF243CEC447B411E3AEA19E /* [CP] Embed Pods Frameworks */,
+				6C5A4A914F5689CB5E58D4B3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = trollappthing;
+			productName = trollappthing;
+			productReference = 0AB52A751D2213C2003B5C0A /* trollappthing.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0AB52A8D1D2213C2003B5C0A /* trollappthingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AB52AA51D2213C2003B5C0A /* Build configuration list for PBXNativeTarget "trollappthingTests" */;
+			buildPhases = (
+				DE3947F50D8DC5535A991FCD /* [CP] Check Pods Manifest.lock */,
+				0AB52A8A1D2213C2003B5C0A /* Sources */,
+				0AB52A8B1D2213C2003B5C0A /* Frameworks */,
+				0AB52A8C1D2213C2003B5C0A /* Resources */,
+				B110C45C159CB2F248867266 /* [CP] Embed Pods Frameworks */,
+				77401DE3725992E489AB8B45 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0AB52A901D2213C2003B5C0A /* PBXTargetDependency */,
+			);
+			name = trollappthingTests;
+			productName = trollappthingTests;
+			productReference = 0AB52A8E1D2213C2003B5C0A /* trollappthingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0AB52A981D2213C2003B5C0A /* trollappthingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AB52AA81D2213C2003B5C0A /* Build configuration list for PBXNativeTarget "trollappthingUITests" */;
+			buildPhases = (
+				024BDEAB580C59A7519B1D27 /* [CP] Check Pods Manifest.lock */,
+				0AB52A951D2213C2003B5C0A /* Sources */,
+				0AB52A961D2213C2003B5C0A /* Frameworks */,
+				0AB52A971D2213C2003B5C0A /* Resources */,
+				29EE13C7C1E3BCD6E0DAE607 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0AB52A9B1D2213C2003B5C0A /* PBXTargetDependency */,
+			);
+			name = trollappthingUITests;
+			productName = trollappthingUITests;
+			productReference = 0AB52A991D2213C2003B5C0A /* trollappthingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0AB52A6D1D2213C2003B5C0A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Kevin Fang";
+				TargetAttributes = {
+					0AB52A741D2213C2003B5C0A = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					0AB52A8D1D2213C2003B5C0A = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 0AB52A741D2213C2003B5C0A;
+					};
+					0AB52A981D2213C2003B5C0A = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 0AB52A741D2213C2003B5C0A;
+					};
+				};
+			};
+			buildConfigurationList = 0AB52A701D2213C2003B5C0A /* Build configuration list for PBXProject "trollappthing" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0AB52A6C1D2213C2003B5C0A;
+			productRefGroup = 0AB52A761D2213C2003B5C0A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0AB52A741D2213C2003B5C0A /* trollappthing */,
+				0AB52A8D1D2213C2003B5C0A /* trollappthingTests */,
+				0AB52A981D2213C2003B5C0A /* trollappthingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0AB52A731D2213C2003B5C0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AB52A881D2213C2003B5C0A /* LaunchScreen.storyboard in Resources */,
+				0AB52A851D2213C2003B5C0A /* Assets.xcassets in Resources */,
+				0AB52A831D2213C2003B5C0A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AB52A8C1D2213C2003B5C0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AB52A971D2213C2003B5C0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		024BDEAB580C59A7519B1D27 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		29EE13C7C1E3BCD6E0DAE607 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-trollappthingUITests/Pods-trollappthingUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3FF243CEC447B411E3AEA19E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-trollappthing/Pods-trollappthing-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61C8CCCFD764617F9E270C6D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6C5A4A914F5689CB5E58D4B3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-trollappthing/Pods-trollappthing-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77401DE3725992E489AB8B45 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-trollappthingTests/Pods-trollappthingTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B110C45C159CB2F248867266 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-trollappthingTests/Pods-trollappthingTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE3947F50D8DC5535A991FCD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0AB52A711D2213C2003B5C0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AFAC79F1D29F92D001B25A7 /* CollectionViewCell.m in Sources */,
+				0AD6A2841D29C81100AE707C /* LandingViewController.m in Sources */,
+				0AFAC79C1D29E12A001B25A7 /* cameraViewController.m in Sources */,
+				0AB52A7D1D2213C2003B5C0A /* AppDelegate.m in Sources */,
+				0AB52A7A1D2213C2003B5C0A /* main.m in Sources */,
+				0AD6A2871D29D75300AE707C /* imagesViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AB52A8A1D2213C2003B5C0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AB52A931D2213C2003B5C0A /* trollappthingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AB52A951D2213C2003B5C0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AB52A9E1D2213C2003B5C0A /* trollappthingUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0AB52A901D2213C2003B5C0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0AB52A741D2213C2003B5C0A /* trollappthing */;
+			targetProxy = 0AB52A8F1D2213C2003B5C0A /* PBXContainerItemProxy */;
+		};
+		0AB52A9B1D2213C2003B5C0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0AB52A741D2213C2003B5C0A /* trollappthing */;
+			targetProxy = 0AB52A9A1D2213C2003B5C0A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0AB52A811D2213C2003B5C0A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0AB52A821D2213C2003B5C0A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0AB52A861D2213C2003B5C0A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0AB52A871D2213C2003B5C0A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0AB52AA01D2213C2003B5C0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0AB52AA11D2213C2003B5C0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0AB52AA31D2213C2003B5C0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9057D271EDA58C9543D64E8F /* Pods-trollappthing.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = trollappthing/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.kfang.trollappthing;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0AB52AA41D2213C2003B5C0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE27399CAF75420DDDA0873D /* Pods-trollappthing.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = trollappthing/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.kfang.trollappthing;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		0AB52AA61D2213C2003B5C0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 244272B0AD26861BBE4758F6 /* Pods-trollappthingTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = trollappthingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.kfang.trollappthingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/trollappthing.app/trollappthing";
+			};
+			name = Debug;
+		};
+		0AB52AA71D2213C2003B5C0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B40208D4CFDED030AC3237D /* Pods-trollappthingTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = trollappthingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.kfang.trollappthingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/trollappthing.app/trollappthing";
+			};
+			name = Release;
+		};
+		0AB52AA91D2213C2003B5C0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE45A5AC444060B1A9CAB52F /* Pods-trollappthingUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = trollappthingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.kfang.trollappthingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = trollappthing;
+			};
+			name = Debug;
+		};
+		0AB52AAA1D2213C2003B5C0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2240FF4C6DC6EBE1DA5D9F0C /* Pods-trollappthingUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = trollappthingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.kfang.trollappthingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = trollappthing;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0AB52A701D2213C2003B5C0A /* Build configuration list for PBXProject "trollappthing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AB52AA01D2213C2003B5C0A /* Debug */,
+				0AB52AA11D2213C2003B5C0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0AB52AA21D2213C2003B5C0A /* Build configuration list for PBXNativeTarget "trollappthing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AB52AA31D2213C2003B5C0A /* Debug */,
+				0AB52AA41D2213C2003B5C0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0AB52AA51D2213C2003B5C0A /* Build configuration list for PBXNativeTarget "trollappthingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AB52AA61D2213C2003B5C0A /* Debug */,
+				0AB52AA71D2213C2003B5C0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0AB52AA81D2213C2003B5C0A /* Build configuration list for PBXNativeTarget "trollappthingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AB52AA91D2213C2003B5C0A /* Debug */,
+				0AB52AAA1D2213C2003B5C0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0AB52A6D1D2213C2003B5C0A /* Project object */;
+}
