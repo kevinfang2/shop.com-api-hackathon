@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Tb9-dC-JAj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Tb9-dC-JAj">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -118,8 +118,6 @@
         <!--Images View Controller-->
         <scene sceneID="avr-pu-3kN">
             <objects>
-                <exit id="wZS-XT-D6G" userLabel="Exit" sceneMemberID="exit"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oFA-AA-YXV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="qeG-ep-C2L" customClass="imagesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jfa-h8-lcR"/>
@@ -218,6 +216,8 @@
                         <segue destination="wZS-XT-D6G" kind="unwind" identifier="unwindFromImage" unwindAction="prepareForUnwind:" id="DbZ-Ri-58j"/>
                     </connections>
                 </viewController>
+                <exit id="wZS-XT-D6G" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oFA-AA-YXV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047" y="338"/>
         </scene>

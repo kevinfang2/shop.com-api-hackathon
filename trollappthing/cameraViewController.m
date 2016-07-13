@@ -19,6 +19,17 @@
 
 @end
 
+
+@implementation NSString (URLEncoding)
+//function used to encode query and matrix parameters
+-(NSString *)urlEncodeUsingEncoding:(NSStringEncoding)encoding {
+    return (__bridge NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,
+                                                                        (CFStringRef)self,
+                                                                        NULL,
+                                                                        (CFStringRef)@"!*'\"();:@&=+$,/?%#[]% ",
+                                                                        CFStringConvertNSStringEncodingToEncoding(encoding));
+}
+@end
 @implementation cameraViewController
 
 
@@ -135,53 +146,38 @@
 
 
 - (NSData *) getRequest:(NSString *)itemName {
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    NSString *endpoint = [NSString stringWithFormat:@"https://api.shop.com:8443/AffiliatePublisherNetwork/v1/products/{productID}/"];
-    NSString *newString;
-    NSCharacterSet *set = [NSCharacterSet URLHostAllowedCharacterSet];
-    newString = [@"834207132" stringByAddingPercentEncodingWithAllowedCharacters:set];
-    endpoint = [endpoint stringByReplacingOccurrencesOfString:@"{productID}" withString:newString];
-
-    NSString *publisherID = @"publisherID";
-    publisherID = [@"publisherID" stringByAddingPercentEncodingWithAllowedCharacters:set];
-    
-    NSString *test;
-    test = [@"TEST" stringByAddingPercentEncodingWithAllowedCharacters:set];
-
-    NSString *locale;
-    locale = [@"locale" stringByAddingPercentEncodingWithAllowedCharacters:set];
-    
-    NSString *language;
-    language = [@"en_US" stringByAddingPercentEncodingWithAllowedCharacters:set];
-    
-    NSString *apikey;
-    apikey = [@"apikey" stringByAddingPercentEncodingWithAllowedCharacters:set];
-    
-    NSString *realapikey;
-    realapikey = [@"l7xxe152174ac1504f0fbad6d99c056c84cb" stringByAddingPercentEncodingWithAllowedCharacters:set];
-    
-    NSString *queryParams = [NSString stringWithFormat:@"?%@&%@",
-                             [NSString stringWithFormat:@"%@=%@", publisherID, test],
-                             [NSString stringWithFormat:@"%@=%@", locale, language],
-                             [NSString stringWithFormat:@"%@=%@", apikey, realapikey]];
-    
-    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",endpoint,queryParams]]];
-    [request setHTTPMethod:@"GET"];
-    
-    NSHTTPURLResponse *urlResponse = nil;
-    NSError *error = nil;
-    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
-    NSString *result = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-    NSLog(@"Response Code: %d", [urlResponse statusCode]);
-    
-    if ([urlResponse statusCode] >= 200 && [urlResponse statusCode] < 300) {
-        NSLog(@"Response: %@", result);
+    @autoreleasepool {
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+        NSString *endpoint = [NSString stringWithFormat:@"https://api.shop.com:8443/AffiliatePublisherNetwork/v1/categories"];
+        NSString *queryParams = [NSString stringWithFormat:@"?%@&%@&%@&%@&%@&%@",
+                                 [NSString stringWithFormat:@"%@=%@", [@"publisherID" urlEncodeUsingEncoding:NSUTF8StringEncoding], [@"TEST" urlEncodeUsingEncoding:NSUTF8StringEncoding]],
+                                 [NSString stringWithFormat:@"%@=%@", [@"locale" urlEncodeUsingEncoding:NSUTF8StringEncoding], [@"en_US" urlEncodeUsingEncoding:NSUTF8StringEncoding]],
+                                 [NSString stringWithFormat:@"%@=%@", [@"apikey" urlEncodeUsingEncoding:NSUTF8StringEncoding], [@"l7xxe152174ac1504f0fbad6d99c056c84cb" urlEncodeUsingEncoding:NSUTF8StringEncoding]],
+                                 [NSString stringWithFormat:@"%@=%@", [@"Content-Type" urlEncodeUsingEncoding:NSUTF8StringEncoding], [@"application/json" urlEncodeUsingEncoding:NSUTF8StringEncoding]]];
+        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",endpoint,queryParams]]];
+        [request setHTTPMethod:@"GET"];
+        NSString* bigString = [NSString stringWithFormat:@"%@=%@", endpoint,queryParams];
+        
+        
+        NSURL *url = [NSURL URLWithString:bigString];
+        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+        NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+        [NSURLConnection sendAsynchronousRequest:urlRequest queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
+        {
+            
+            
+            if (error)
+            {
+                NSLog(@"Error,%@", [error localizedDescription]);
+            }
+            else
+            {
+                NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding]);
+            }
+        }];
     }
-    
-    return responseData;
+    return 0;
 }
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
