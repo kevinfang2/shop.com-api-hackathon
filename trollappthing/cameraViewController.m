@@ -148,35 +148,25 @@
 - (NSData *) getRequest:(NSString *)itemName {
     @autoreleasepool {
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-        NSString *endpoint = [NSString stringWithFormat:@"https://api.shop.com:8443/AffiliatePublisherNetwork/v1/categories"];
-        NSString *queryParams = [NSString stringWithFormat:@"?%@&%@&%@&%@&%@&%@",
+        NSString *endpoint = [NSString stringWithFormat:@"https://api.shop.com/AffiliatePublisherNetwork/v1/categories"];
+        NSString *queryParams = [NSString stringWithFormat:@"?%@&%@",
                                  [NSString stringWithFormat:@"%@=%@", [@"publisherID" urlEncodeUsingEncoding:NSUTF8StringEncoding], [@"TEST" urlEncodeUsingEncoding:NSUTF8StringEncoding]],
-                                 [NSString stringWithFormat:@"%@=%@", [@"locale" urlEncodeUsingEncoding:NSUTF8StringEncoding], [@"en_US" urlEncodeUsingEncoding:NSUTF8StringEncoding]],
-                                 [NSString stringWithFormat:@"%@=%@", [@"apikey" urlEncodeUsingEncoding:NSUTF8StringEncoding], [@"l7xxe152174ac1504f0fbad6d99c056c84cb" urlEncodeUsingEncoding:NSUTF8StringEncoding]],
-                                 [NSString stringWithFormat:@"%@=%@", [@"Content-Type" urlEncodeUsingEncoding:NSUTF8StringEncoding], [@"application/json" urlEncodeUsingEncoding:NSUTF8StringEncoding]]];
+                                 [NSString stringWithFormat:@"%@=%@", [@"locale" urlEncodeUsingEncoding:NSUTF8StringEncoding], [@"en_US" urlEncodeUsingEncoding:NSUTF8StringEncoding]]];
         [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",endpoint,queryParams]]];
+        [request addValue:@"l7xxa85a2511a8454491ac39f7a02cab7eb8" forHTTPHeaderField:@"apikey"];
         [request setHTTPMethod:@"GET"];
-        NSString* bigString = [NSString stringWithFormat:@"%@=%@", endpoint,queryParams];
         
         
-        NSURL *url = [NSURL URLWithString:bigString];
-        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-        NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-        [NSURLConnection sendAsynchronousRequest:urlRequest queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
-        {
-            
-            
-            if (error)
-            {
-                NSLog(@"Error,%@", [error localizedDescription]);
-            }
-            else
-            {
-                NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding]);
-            }
-        }];
+        NSHTTPURLResponse *urlResponse = nil;
+        NSError *error = nil;
+        NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
+        NSString *result = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+        NSLog(@"Response Code: %d", [urlResponse statusCode]);
+        if ([urlResponse statusCode] >= 200 && [urlResponse statusCode] < 300) {
+            NSLog(@"Response: %@", result);
+        }
+        return 0;
     }
-    return 0;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
