@@ -57,9 +57,9 @@ NSString* reuseIdentifier = @"cell";
 }
 
 
-- (void) unwindSegue{
-    [self performSegueWithIdentifier:@"unwindFromImage" sender:self];
-}
+//- (void) unwindSegue{
+//    [self performSegueWithIdentifier:@"unwindFromImage" sender:self];
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

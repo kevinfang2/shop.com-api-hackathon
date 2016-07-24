@@ -137,9 +137,24 @@
          UIImage *image = [[UIImage alloc] initWithData:imageData];
          
          NSData *imageData2 = UIImageJPEGRepresentation(image, 0.0);
-         NSString *encodedString = [imageData2 base64Encoding];
+         NSString *encodedString = [imageData2 base64EncodedStringWithOptions:0];
          NSLog(@"%@", encodedString);
          NSData *test = [self getRequest:(@"Same")];
+         
+         NSError *jsonError = nil;
+         id jsonObject = [NSJSONSerialization JSONObjectWithData:test options:kNilOptions error:&jsonError];
+         
+         if ([jsonObject isKindOfClass:[NSArray class]]) {
+             NSLog(@"its an array!");
+             NSArray *jsonArray = (NSArray *)jsonObject;
+             NSLog(@"jsonArray - %@",jsonArray);
+         }
+         else {
+             NSLog(@"its probably a dictionary");
+             NSDictionary *jsonReq = (NSDictionary *)jsonObject;
+             NSArray * values = [jsonReq objectForKey:@"categories"];
+             NSLog(@"%@", values[0]); //everything under "Tools"
+         }
          [self performSegueWithIdentifier:@"afterCamera" sender:self];
      }];
 }
@@ -163,9 +178,9 @@
         NSString *result = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
         NSLog(@"Response Code: %d", [urlResponse statusCode]);
         if ([urlResponse statusCode] >= 200 && [urlResponse statusCode] < 300) {
-            NSLog(@"Response: %@", result);
+//            NSLog(@"Response: %@", result);
         }
-        return 0;
+        return responseData;
     }
 }
 - (void)didReceiveMemoryWarning {

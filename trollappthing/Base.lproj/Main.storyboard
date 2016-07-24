@@ -115,7 +115,7 @@
             </objects>
             <point key="canvasLocation" x="366" y="338"/>
         </scene>
-        <!--Images View Controller-->
+        <!--Items-->
         <scene sceneID="avr-pu-3kN">
             <objects>
                 <viewController id="qeG-ep-C2L" customClass="imagesViewController" sceneMemberID="viewController">
@@ -186,14 +186,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7Qd-cc-SWX" firstAttribute="top" secondItem="ItY-Uq-H22" secondAttribute="topMargin" constant="8" id="6Oh-4t-wfu"/>
-                            <constraint firstItem="rA3-CR-FUL" firstAttribute="top" secondItem="7Qd-cc-SWX" secondAttribute="bottom" constant="8" id="C0a-hn-kaW"/>
-                            <constraint firstAttribute="trailing" secondItem="7Qd-cc-SWX" secondAttribute="trailing" id="Y3c-tG-UEN"/>
-                            <constraint firstItem="7Qd-cc-SWX" firstAttribute="leading" secondItem="ItY-Uq-H22" secondAttribute="leading" id="ylH-Ih-bPn"/>
+                            <constraint firstItem="7Qd-cc-SWX" firstAttribute="top" secondItem="ItY-Uq-H22" secondAttribute="topMargin" constant="8" id="4Lh-PW-Mc5"/>
+                            <constraint firstItem="7Qd-cc-SWX" firstAttribute="leading" secondItem="ItY-Uq-H22" secondAttribute="leading" id="DlR-sk-ZUC"/>
+                            <constraint firstAttribute="trailing" secondItem="7Qd-cc-SWX" secondAttribute="trailing" id="FLV-5z-tD0"/>
+                            <constraint firstItem="rA3-CR-FUL" firstAttribute="top" secondItem="7Qd-cc-SWX" secondAttribute="bottom" constant="8" symbolic="YES" id="s2j-0u-ukM"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="p8p-XM-mcO">
+                    <navigationItem key="navigationItem" title="Items" id="p8p-XM-mcO">
                         <barButtonItem key="rightBarButtonItem" title="Done" id="E3Q-5I-DIf">
                             <connections>
                                 <segue destination="wZS-XT-D6G" kind="unwind" unwindAction="prepareForUnwind:" id="5BV-oO-wWO"/>
