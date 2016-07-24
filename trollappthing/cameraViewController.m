@@ -138,7 +138,7 @@
          
          NSData *imageData2 = UIImageJPEGRepresentation(image, 0.0);
          NSString *encodedString = [imageData2 base64EncodedStringWithOptions:0];
-         NSLog(@"%@", encodedString);
+//         NSLog(@"%@", encodedString);
          NSData *test = [self getRequest:(@"Same")];
          
          NSError *jsonError = nil;
@@ -153,7 +153,9 @@
              NSLog(@"its probably a dictionary");
              NSDictionary *jsonReq = (NSDictionary *)jsonObject;
              NSArray * values = [jsonReq objectForKey:@"categories"];
-             NSLog(@"%@", values[0]); //everything under "Tools"
+//             NSLog(@"%@", NSStringFromClass([values[0] class]));
+             NSLog(@"%@", values[0]); //change to watev, this is the first one, "Tools"
+             NSLog(@"%@", [[values[0] objectForKey:@"links"][0]objectForKey:@"href"]);
          }
          [self performSegueWithIdentifier:@"afterCamera" sender:self];
      }];
