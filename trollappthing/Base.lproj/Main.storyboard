@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Tb9-dC-JAj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Tb9-dC-JAj">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Landing View Controller-->
@@ -107,7 +107,7 @@
                         <outlet property="cameraView" destination="oez-7o-fnV" id="WPk-Cw-mxe"/>
                         <outlet property="titleLabel" destination="Wgs-yO-H7u" id="2Da-kz-ohf"/>
                         <segue destination="Ons-43-TMs" kind="unwind" identifier="unwindSegue" unwindAction="prepareForUnwind:" id="9HS-qw-xHn"/>
-                        <segue destination="qeG-ep-C2L" kind="show" identifier="afterCamera" id="Sga-xX-n7c"/>
+                        <segue destination="xnm-0f-a3E" kind="show" identifier="afterCamera" id="KTq-qb-ZUZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U1I-7o-Xhh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -128,7 +128,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7Qd-cc-SWX">
-                                <rect key="frame" x="0.0" y="60" width="600" height="540"/>
+                                <rect key="frame" x="0.0" y="8" width="600" height="540"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1uw-Cr-8Bz">
                                     <size key="itemSize" width="143" height="143"/>
@@ -138,7 +138,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="99" contentMode="center" reuseIdentifier="cell" id="wCi-Nh-ig9" customClass="CollectionViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="143" height="143"/>
+                                        <rect key="frame" x="0.0" y="64" width="143" height="143"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="143" height="143"/>
@@ -183,43 +183,48 @@
                                     <outlet property="delegate" destination="qeG-ep-C2L" id="ado-ia-btp"/>
                                 </connections>
                             </collectionView>
-                            <navigationBar userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7br-8w-50j">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="KRV-UL-YwI"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Items" id="oqz-Tp-Bb0">
-                                        <barButtonItem key="rightBarButtonItem" title="Done" id="E3Q-5I-DIf">
-                                            <connections>
-                                                <segue destination="wZS-XT-D6G" kind="unwind" unwindAction="prepareForUnwind:" id="FgV-OS-ZkC"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rA3-CR-FUL" firstAttribute="top" secondItem="7Qd-cc-SWX" secondAttribute="bottom" id="C0a-hn-kaW"/>
-                            <constraint firstItem="7br-8w-50j" firstAttribute="top" secondItem="ItY-Uq-H22" secondAttribute="top" id="S5k-9y-aXJ"/>
-                            <constraint firstItem="7br-8w-50j" firstAttribute="leading" secondItem="ItY-Uq-H22" secondAttribute="leading" id="XNT-eo-I1Y"/>
+                            <constraint firstItem="7Qd-cc-SWX" firstAttribute="top" secondItem="ItY-Uq-H22" secondAttribute="topMargin" constant="8" id="6Oh-4t-wfu"/>
+                            <constraint firstItem="rA3-CR-FUL" firstAttribute="top" secondItem="7Qd-cc-SWX" secondAttribute="bottom" constant="8" id="C0a-hn-kaW"/>
                             <constraint firstAttribute="trailing" secondItem="7Qd-cc-SWX" secondAttribute="trailing" id="Y3c-tG-UEN"/>
-                            <constraint firstItem="7Qd-cc-SWX" firstAttribute="top" secondItem="7br-8w-50j" secondAttribute="bottom" id="ift-bv-cqb"/>
-                            <constraint firstAttribute="trailing" secondItem="7br-8w-50j" secondAttribute="trailing" id="iy5-eO-bJN"/>
                             <constraint firstItem="7Qd-cc-SWX" firstAttribute="leading" secondItem="ItY-Uq-H22" secondAttribute="leading" id="ylH-Ih-bPn"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="p8p-XM-mcO">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="E3Q-5I-DIf">
+                            <connections>
+                                <segue destination="wZS-XT-D6G" kind="unwind" unwindAction="prepareForUnwind:" id="5BV-oO-wWO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="CollectionView" destination="7Qd-cc-SWX" id="Dfw-4z-054"/>
-                        <outlet property="navbarItem" destination="oqz-Tp-Bb0" id="Hca-7k-6EU"/>
-                        <segue destination="wZS-XT-D6G" kind="unwind" identifier="unwindFromImage" unwindAction="prepareForUnwind:" id="DbZ-Ri-58j"/>
                     </connections>
                 </viewController>
                 <exit id="wZS-XT-D6G" userLabel="Exit" sceneMemberID="exit"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFA-AA-YXV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047" y="338"/>
+            <point key="canvasLocation" x="1699" y="364"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uFH-yw-aSN">
+            <objects>
+                <navigationController id="xnm-0f-a3E" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xJp-Y4-Frk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="qeG-ep-C2L" kind="relationship" relationship="rootViewController" id="E5d-R9-P4S"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wPP-XM-Ali" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1021" y="393"/>
         </scene>
     </scenes>
 </document>
