@@ -31,6 +31,7 @@ NSString* reuseIdentifier = @"cell";
     _pricesArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"priceArray"];
     _imagesArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"imageArray"];
     _linksArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"linkArray"];
+    _brandArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"brandArray"];
     navbarItem.title = [[NSUserDefaults standardUserDefaults] valueForKey:@"title"];
     
     NSLog(@"aowiecdoawiecmieodm %lu",(unsigned long)_namesArray.count);
@@ -55,19 +56,26 @@ NSString* reuseIdentifier = @"cell";
     static NSString *identifier = @"cell";
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
-    UILabel *costLabel = (UILabel *)[cell viewWithTag:97];
+    UILabel *costLabel = (UILabel *)[cell viewWithTag:101];
     costLabel.text = _pricesArray[indexPath.row];
     
     UILabel *nameLabel = (UILabel *)[cell viewWithTag:98];
     nameLabel.text = _namesArray[indexPath.row];
     
+    UILabel *brandLabel = (UILabel *)[cell viewWithTag:97];
+    brandLabel.text = _brandArray[indexPath.row];
+    
+    
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:100];
+    imageView.layer.cornerRadius = 43;
+    imageView.layer.masksToBounds = YES;
+
     NSLog(@"fwedwe %@", _imagesArray[indexPath.row]);
     NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:_imagesArray[indexPath.row]]];
     UIImage * image = [UIImage imageWithData: imageData];
     imageView.image = image;
     //    cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photoframe"]];
-    cell.backgroundColor = [UIColor colorWithRed:0.937 green:0.870 blue:0.607 alpha:1.0];
+    cell.backgroundColor = [UIColor colorWithRed:0.937 green:0.870 blue:1.0 alpha:1.0];
     return cell;
 }
 

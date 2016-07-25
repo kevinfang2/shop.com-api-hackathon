@@ -13,5 +13,6 @@
 @property NSMutableArray *linksArray;
 @property NSMutableArray *imagesArray;
 @property NSMutableArray *priceArray;
+@property NSMutableArray *brandArray;
 - (NSData *)getRequest:(NSString *)itemName;
 @end

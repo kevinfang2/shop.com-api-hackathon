@@ -13,4 +13,5 @@
 @property NSMutableArray *pricesArray;
 @property NSMutableArray *linksArray;
 @property NSMutableArray *imagesArray;
+@property NSMutableArray *brandArray;
 @end

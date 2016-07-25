@@ -7,7 +7,7 @@
 	<key>ApplicationDidBecomeActive</key>
 	<string>YES</string>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>en_US</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

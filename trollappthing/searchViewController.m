@@ -10,8 +10,8 @@
 #import "ClarifaiClient.h"
 #import <CloudSight/CloudSight.h>
 
-static NSString * const kAppID = @"wsoRfJNqSNH67q1qWDgJHizF6jcX0elwolubIirz";
-static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G";
+static NSString * const kAppID = @"-ZyxNh2erUiU9-4IL-X5HJEAxJIxppO2r-wg6AMv";
+static NSString * const kAppSecret = @"14jeXj05O265YuxIRHGLq1lKN40odmDv0WBl2cga";
 
 @interface searchViewController (){
     cameraViewController *cameraView;
@@ -163,12 +163,12 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
         NSArray * values = [jsonReq objectForKey:@"products"];
         //             NSLog(@"%@", NSStringFromClass([values[0] class]));
         NSLog(@"%@", values[0]); //change to watev, this is the first one, "Tools"
-        NSLog(@"%@", [[values[0] objectForKey:@"links"][0]objectForKey:@"id"]);
         for (int x = 0; x <= 11; x++){
             [_nameArray addObject:[values[x] objectForKey:@"name"]];
             [_priceArray addObject:[values[x] objectForKey:@"maximumPrice"]];
             [_linksArray addObject:[values[x] objectForKey:@"referralUrl"]];
             [_imagesArray addObject:[values[x] objectForKey:@"imageUrl"]];
+            [_brandArray addObject:[values[x] objectForKey:@"brand"]];
         }
     }
         
@@ -176,7 +176,8 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
     [[NSUserDefaults standardUserDefaults] setObject:_priceArray forKey:@"priceArray"];
     [[NSUserDefaults standardUserDefaults] setObject:_linksArray forKey:@"linkArray"];
     [[NSUserDefaults standardUserDefaults] setObject:_imagesArray forKey:@"imageArray"];
-        
+    [[NSUserDefaults standardUserDefaults] setObject:_brandArray forKey:@"brandArray"];
+
     NSLog(@"awo3idaciejcd %lu", (unsigned long)_priceArray.count);
     
     [self performSegueWithIdentifier:@"afterSearch" sender:self];
