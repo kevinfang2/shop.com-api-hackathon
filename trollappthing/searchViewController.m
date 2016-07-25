@@ -8,7 +8,9 @@
 
 #import "searchViewController.h"
 
-@interface searchViewController ()
+@interface searchViewController (){
+    cameraViewController *cameraView;
+}
 
 @property (weak, nonatomic) IBOutlet UITextField *searchField;
 
@@ -18,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    cameraView = [[cameraViewController alloc] init];
     UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 15, 90, 90)];
     UIImage *backButtonImg = [UIImage imageNamed:@"darkerBackButton"];
     [backButton setImage:backButtonImg forState:UIControlStateNormal];
@@ -58,8 +61,57 @@
 
 -(void)search:(NSString *)searchQuery {
     NSLog(@"%@",searchQuery);
-}
+    NSData *test = [cameraView getRequest:(searchQuery)];
+    NSError *jsonError = nil;
+    id jsonObject = [NSJSONSerialization JSONObjectWithData:test options:kNilOptions error:&jsonError];
     
+    if ([jsonObject isKindOfClass:[NSArray class]]) {
+        NSLog(@"its an array!");
+        NSArray *jsonArray = (NSArray *)jsonObject;
+        NSLog(@"jsonArray - %@",jsonArray);
+    }
+    else {
+        
+        NSLog(@"its probably a dictionary");
+        NSDictionary *jsonReq = (NSDictionary *)jsonObject;
+        NSArray * values = [jsonReq objectForKey:@"categories"];
+        //             NSLog(@"%@", NSStringFromClass([values[0] class]));
+        NSLog(@"%@", values[0]); //change to watev, this is the first one, "Tools"
+        NSLog(@"%@", [[values[0] objectForKey:@"links"][0]objectForKey:@"href"]);
+        
+        @autoreleasepool {
+            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+            NSString *endpoint = [NSString stringWithFormat:@"%@",[[values[0] objectForKey:@"links"][0]objectForKey:@"href"]];
+            [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",endpoint]]];
+            [request addValue:@"l7xxa85a2511a8454491ac39f7a02cab7eb8" forHTTPHeaderField:@"apikey"];
+            [request setHTTPMethod:@"GET"];
+            
+            NSHTTPURLResponse *urlResponse = nil;
+            NSError *error = nil;
+            NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
+            NSString *result = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+            NSLog(@"Response Code: %d", [urlResponse statusCode]);
+            if ([urlResponse statusCode] >= 200 && [urlResponse statusCode] < 300) {
+                //            NSLog(@"Response: %@", result);
+            }
+            NSLog(@"aweodcaowieacjweid %@",result);
+            id jsonObject = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&jsonError];
+            NSDictionary *jsonReq = (NSDictionary *)jsonObject;
+            NSArray * values = [jsonReq objectForKey:@"products"];
+//            for (int x = 0; x<=10; x++){
+//                [_nameArray addObject:[values[x] objectForKey:@"name"]];
+//                [_priceArray addObject:[values[x] objectForKey:@"maximumPrice"]];
+//                [_linksArray addObject:[values[x] objectForKey:@"referralUrl"]];
+//                
+//                NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:[values[x] objectForKey:@"imageUrl"]]];
+//                UIImage * image = [UIImage imageWithData: imageData];
+//                [_imagesArray addObject:image];
+//            }
+        }
+    }
+
+}
+
 -(void)dismissKeyboard {
     [_searchField resignFirstResponder];
 }

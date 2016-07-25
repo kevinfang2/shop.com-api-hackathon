@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "cameraViewController.h"
 
 @interface searchViewController : UIViewController <UITextFieldDelegate>
 
