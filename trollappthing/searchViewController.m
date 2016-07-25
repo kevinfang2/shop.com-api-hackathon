@@ -53,18 +53,17 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
 {
     [textField resignFirstResponder];
 //    textField.text = @"";
-    [self search:(textField.text)];
+    if([_searchField hasText]) {
+        [self search:(_searchField.text)];
+    }
     return YES;
 }
 
-//- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-//    textField.text = @"";
-//    return YES;
-//}
-
 - (IBAction)submitPressed:(id)sender {
     [self dismissKeyboard];
-    [self search:(_searchField.text)];
+    if([_searchField hasText]) {
+        [self search:(_searchField.text)];
+    }
 }
 
 
