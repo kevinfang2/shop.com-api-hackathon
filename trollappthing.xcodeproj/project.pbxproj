@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00A26C1A1D45E49300007FCB /* searchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A26C191D45E49300007FCB /* searchViewController.m */; };
 		0AB52A7A1D2213C2003B5C0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB52A791D2213C2003B5C0A /* main.m */; };
 		0AB52A7D1D2213C2003B5C0A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB52A7C1D2213C2003B5C0A /* AppDelegate.m */; };
 		0AB52A831D2213C2003B5C0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AB52A811D2213C2003B5C0A /* Main.storyboard */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00A26C181D45E49300007FCB /* searchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchViewController.h; sourceTree = "<group>"; };
+		00A26C191D45E49300007FCB /* searchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchViewController.m; sourceTree = "<group>"; };
 		0AB52A751D2213C2003B5C0A /* trollappthing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trollappthing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AB52A791D2213C2003B5C0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0AB52A7B1D2213C2003B5C0A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 				0AB52A7B1D2213C2003B5C0A /* AppDelegate.h */,
 				0AB52A7C1D2213C2003B5C0A /* AppDelegate.m */,
 				0AB52A811D2213C2003B5C0A /* Main.storyboard */,
+				00A26C181D45E49300007FCB /* searchViewController.h */,
+				00A26C191D45E49300007FCB /* searchViewController.m */,
 				0AFAC79D1D29F92D001B25A7 /* CollectionViewCell.h */,
 				0AFAC79E1D29F92D001B25A7 /* CollectionViewCell.m */,
 				0AFAC79A1D29E12A001B25A7 /* cameraViewController.h */,
@@ -461,6 +466,7 @@
 				0AFAC79C1D29E12A001B25A7 /* cameraViewController.m in Sources */,
 				0AB52A7D1D2213C2003B5C0A /* AppDelegate.m in Sources */,
 				0AB52A7A1D2213C2003B5C0A /* main.m in Sources */,
+				00A26C1A1D45E49300007FCB /* searchViewController.m in Sources */,
 				0AD6A2871D29D75300AE707C /* imagesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
