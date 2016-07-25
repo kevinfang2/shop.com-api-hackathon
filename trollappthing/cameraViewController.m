@@ -92,10 +92,10 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
     UIImage *btnImage = [UIImage imageNamed:@"cameraButton"];
     [cameraButton setImage:btnImage forState:UIControlStateNormal];
     [cameraButton addTarget:self
-               action:@selector(capture)
-     forControlEvents:UIControlEventTouchUpInside];
+                     action:@selector(capture)
+           forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:cameraButton];
-
+    
     NSMutableAttributedString *mat = [titleLabel.attributedText mutableCopy];
     [mat addAttributes:@{NSUnderlineStyleAttributeName: @(NSUnderlineStyleSingle)} range:NSMakeRange (0, mat.length)];
     titleLabel.attributedText = mat;
@@ -163,7 +163,7 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
          
          NSData *imageData2 = UIImageJPEGRepresentation(image, 0.0);
          NSString *encodedString = [imageData2 base64EncodedStringWithOptions:0];
-
+         
          [CloudSightConnection sharedInstance].consumerKey = @"w63eVgBk6UKS5zsK2ATaTA";
          [CloudSightConnection sharedInstance].consumerSecret = @"EM8y1gD50g-PaBNVudqxuA";
          
@@ -192,7 +192,7 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
                  NSString *tag = tags[0];
                  tag = [tag substringWithRange:NSMakeRange(6, [tag length] - 6)];
                  NSLog(@"the modified tag is %@", tag);
-
+                 
                  NSData *test = [self getRequest:(tag)];
                  
                  
@@ -205,6 +205,11 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
                      NSLog(@"jsonArray - %@",jsonArray);
                  }
                  else {
+                     NSMutableArray *empty;
+                     _nameArray = empty;
+                     _priceArray = empty;
+                     _imageArray = empty;
+                     _linksArray = empty;
                      
                      NSLog(@"its probably a dictionary");
                      NSDictionary *jsonReq = (NSDictionary *)jsonObject;
@@ -237,35 +242,28 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
                              [_priceArray addObject:[values[x] objectForKey:@"maximumPrice"]];
                              [_linksArray addObject:[values[x] objectForKey:@"referralUrl"]];
                              
-                             NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:[values[x] objectForKey:@"imageUrl"]]];
-                             UIImage * image = [UIImage imageWithData: imageData];
-                             [_imagesArray addObject:image];
+                             //                             NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:[values[x] objectForKey:@"imageUrl"]]];
+                             //                             UIImage * image = [UIImage imageWithData: imageData];
+                             [_imagesArray addObject:[values[x] objectForKey:@"imageUrl"]];
                          }
                      }
                  }
+                 
+                 [[NSUserDefaults standardUserDefaults] setObject:_nameArray forKey:@"nameArray"];
+                 [[NSUserDefaults standardUserDefaults] setObject:_priceArray forKey:@"priceArray"];
+                 [[NSUserDefaults standardUserDefaults] setObject:_linksArray forKey:@"linkArray"];
+                 [[NSUserDefaults standardUserDefaults] setObject:_imagesArray forKey:@"imageArray"];
+                 [[NSUserDefaults standardUserDefaults] setValue:tag forKey:@"title"];
+                 
+                 NSLog(@"awo3idaciejcd %lu", (unsigned long)_priceArray.count);
+                 
                  [self performSegueWithIdentifier:@"afterCamera" sender:self];
              }
          }];
      }];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"afterCamera"])
-    {
-        imagesViewController *nextController = [[imagesViewController alloc] init];
-        
-        nextController.namesArray = _nameArray;
-        nextController.pricesArray = _priceArray;
-        nextController.linksArray = _linksArray;
-        nextController.imagesArray = _imagesArray;
-        
-        NSLog(@"awo3idaciejcd %lu", (unsigned long)_priceArray.count);
-        NSLog(@"awo3idaciejcd %lu", (unsigned long)nextController.pricesArray.count);
 
-        [self.navigationController showViewController:nextController sender:self];
-    }
-}
 
 
 - (NSData *) getRequest:(NSString *)itemName {
@@ -286,7 +284,18 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
         NSString *result = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
         NSLog(@"Response Code: %d", [urlResponse statusCode]);
         if ([urlResponse statusCode] >= 200 && [urlResponse statusCode] < 300) {
-//            NSLog(@"Response: %@", result);
+            //            NSLog(@"Response: %@", result);
+        }
+        if([urlResponse statusCode] == 0){
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Server Died Sorry"
+                                                                           message:@"The app might crash now"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {}];
+            
+            [alert addAction:defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
         }
         return responseData;
     }

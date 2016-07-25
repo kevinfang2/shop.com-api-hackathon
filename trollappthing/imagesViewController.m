@@ -26,16 +26,19 @@ NSString* reuseIdentifier = @"cell";
     [super viewDidLoad];
     CollectionView.dataSource = self;
     CollectionView.delegate = self;
-    _namesArray = [[NSMutableArray alloc]init];
-    _pricesArray = [[NSMutableArray alloc]init];
-    _imagesArray = [[NSMutableArray alloc] init];
-    _linksArray = [[NSMutableArray alloc] init];
+    _namesArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"nameArray"];;
+    _pricesArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"priceArray"];
+    _imagesArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"imageArray"];
+    _linksArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"linkArray"];
+    navbarItem.title = [[NSUserDefaults standardUserDefaults] valueForKey:@"title"];
+    
     NSLog(@"aowiecdoawiecmieodm %lu",(unsigned long)_namesArray.count);
-    NSLog(@"apwoedcawed %lu", (unsigned long)_pricesArray.count);
+    //    NSLog(@"aoweidjoawiejdoa %@", _namesArray[0]);
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    NSLog(@"apwoedcawed %lu", (unsigned long)_pricesArray.count);
     return _namesArray.count;
 }
 
@@ -51,9 +54,12 @@ NSString* reuseIdentifier = @"cell";
     nameLabel.text = _namesArray[indexPath.row];
     
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:100];
-    imageView.image = [UIImage imageNamed:[_imagesArray objectAtIndex:indexPath.row]];
-    cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photoframe"]];
-
+    NSLog(@"fwedwe %@", _imagesArray[indexPath.row]);
+    NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:_imagesArray[indexPath.row]]];
+    UIImage * image = [UIImage imageWithData: imageData];
+    imageView.image = image;
+    //    cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photoframe"]];
+    cell.backgroundColor = [UIColor colorWithRed:0.937 green:0.870 blue:0.607 alpha:1.0];
     return cell;
 }
 
@@ -77,13 +83,13 @@ NSString* reuseIdentifier = @"cell";
 
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
