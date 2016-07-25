@@ -57,6 +57,22 @@
 - (IBAction)uploadImagePressed:(id)sender {
      NSLog(@"same");
     [self dismissKeyboard];
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
+    imagePickerController.delegate = self;
+    imagePickerController.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:imagePickerController animated:YES completion:NULL];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker
+        didFinishPickingImage:(UIImage *)image
+                  editingInfo:(NSDictionary *)editingInfo
+{
+    // Dismiss the image selection, hide the picker and
+    
+    //show the image view with the picked image
+    
+    [picker dismissModalViewControllerAnimated:YES];
+    //UIImage *newImage = image;
 }
 
 -(void)search:(NSString *)searchQuery {

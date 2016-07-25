@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "cameraViewController.h"
 
-@interface searchViewController : UIViewController <UITextFieldDelegate>
+@interface searchViewController : UIViewController <UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @end
