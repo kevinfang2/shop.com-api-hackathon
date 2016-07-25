@@ -20,13 +20,22 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - BFOAuth (1.0.1)
+  - CloudSight (1.0.3):
+    - BFOAuth (~> 1.0)
+    - RequestUtils (~> 1.1)
+  - RequestUtils (1.1.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - CloudSight (~> 1.0)
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  BFOAuth: e3c2e4eaae862a89bc301ed6f292d3cd0d6a107b
+  CloudSight: 7974bacb22ec2db1bfb0f0242d9be7f442a78d77
+  RequestUtils: 0f04f89abca3936c6566e2f4c3ce5d252036bc89
 
-PODFILE CHECKSUM: cb109528e8c34e90e21c0e41fa7d55dd14a99723
+PODFILE CHECKSUM: b1bce07c83738f5d035eeac9dfe66015434f4823
 
 COCOAPODS: 1.0.1

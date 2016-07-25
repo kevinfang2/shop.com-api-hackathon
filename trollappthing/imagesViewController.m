@@ -26,8 +26,12 @@ NSString* reuseIdentifier = @"cell";
     [super viewDidLoad];
     CollectionView.dataSource = self;
     CollectionView.delegate = self;
+    _namesArray = [[NSMutableArray alloc]init];
+    _pricesArray = [[NSMutableArray alloc]init];
+    _imagesArray = [[NSMutableArray alloc] init];
+    _linksArray = [[NSMutableArray alloc] init];
     NSLog(@"aowiecdoawiecmieodm %lu",(unsigned long)_namesArray.count);
-    NSLog(@"apwoedcawed %@", _pricesArray.count);
+    NSLog(@"apwoedcawed %lu", (unsigned long)_pricesArray.count);
 }
 
 

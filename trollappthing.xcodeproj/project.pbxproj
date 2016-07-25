@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A9A97A71D45E004003A73C2 /* ClarifaiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A97A61D45E004003A73C2 /* ClarifaiClient.m */; };
 		0AB52A7A1D2213C2003B5C0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB52A791D2213C2003B5C0A /* main.m */; };
 		0AB52A7D1D2213C2003B5C0A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB52A7C1D2213C2003B5C0A /* AppDelegate.m */; };
 		0AB52A831D2213C2003B5C0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AB52A811D2213C2003B5C0A /* Main.storyboard */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A9A97A51D45E004003A73C2 /* ClarifaiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClarifaiClient.h; sourceTree = "<group>"; };
+		0A9A97A61D45E004003A73C2 /* ClarifaiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClarifaiClient.m; sourceTree = "<group>"; };
 		0AB52A751D2213C2003B5C0A /* trollappthing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trollappthing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AB52A791D2213C2003B5C0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0AB52A7B1D2213C2003B5C0A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -134,6 +137,8 @@
 				0AFAC79E1D29F92D001B25A7 /* CollectionViewCell.m */,
 				0AFAC79A1D29E12A001B25A7 /* cameraViewController.h */,
 				0AFAC79B1D29E12A001B25A7 /* cameraViewController.m */,
+				0A9A97A51D45E004003A73C2 /* ClarifaiClient.h */,
+				0A9A97A61D45E004003A73C2 /* ClarifaiClient.m */,
 				0AD6A2851D29D75300AE707C /* imagesViewController.h */,
 				0AD6A2861D29D75300AE707C /* imagesViewController.m */,
 				0AD6A2821D29C81100AE707C /* LandingViewController.h */,
@@ -459,6 +464,7 @@
 				0AFAC79F1D29F92D001B25A7 /* CollectionViewCell.m in Sources */,
 				0AD6A2841D29C81100AE707C /* LandingViewController.m in Sources */,
 				0AFAC79C1D29E12A001B25A7 /* cameraViewController.m in Sources */,
+				0A9A97A71D45E004003A73C2 /* ClarifaiClient.m in Sources */,
 				0AB52A7D1D2213C2003B5C0A /* AppDelegate.m in Sources */,
 				0AB52A7A1D2213C2003B5C0A /* main.m in Sources */,
 				0AD6A2871D29D75300AE707C /* imagesViewController.m in Sources */,
