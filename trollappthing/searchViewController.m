@@ -63,8 +63,8 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
 //}
 
 - (IBAction)submitPressed:(id)sender {
-    [self search:(_searchField.text)];
     [self dismissKeyboard];
+    [self search:(_searchField.text)];
 }
 
 
@@ -73,6 +73,7 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
     [self dismissKeyboard];
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
     imagePickerController.delegate = self;
+    imagePickerController.allowsEditing = YES;
     imagePickerController.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
     [self presentViewController:imagePickerController animated:YES completion:NULL];
 }
@@ -81,7 +82,6 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
     
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     NSData *imageData = UIImageJPEGRepresentation(chosenImage, 0.0);
-    NSString *imageString = [UIImageJPEGRepresentation(chosenImage, 0.0) base64EncodedStringWithOptions:0];
     
     [CloudSightConnection sharedInstance].consumerKey = @"w63eVgBk6UKS5zsK2ATaTA";
     [CloudSightConnection sharedInstance].consumerSecret = @"EM8y1gD50g-PaBNVudqxuA";
