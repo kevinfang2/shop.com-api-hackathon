@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface imagesViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
-
+@property NSMutableArray *namesArray;
+@property NSMutableArray *pricesArray;
+@property NSMutableArray *linksArray;
+@property NSMutableArray *imagesArray;
 @end

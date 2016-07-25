@@ -10,6 +10,7 @@
 #import <ImageIO/CGImageProperties.h>
 #import <AVFoundation/AVFoundation.h>
 #import <Foundation/Foundation.h>
+#import "imagesViewController.h"
 
 @interface cameraViewController (){
     AVCaptureStillImageOutput* stillImageOutput;
@@ -35,6 +36,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _nameArray = [[NSMutableArray alloc] init];
+    _priceArray = [[NSMutableArray alloc] init];
+    _linksArray = [[NSMutableArray alloc] init];
+    _imagesArray = [[NSMutableArray alloc] init];
+    
     
     AVCaptureSession *session = [[AVCaptureSession alloc] init];
     session.sessionPreset = AVCaptureSessionPresetHigh;
@@ -148,17 +155,72 @@
              NSLog(@"its an array!");
              NSArray *jsonArray = (NSArray *)jsonObject;
              NSLog(@"jsonArray - %@",jsonArray);
+             
+             
          }
          else {
+//             NSMutableArray *emptyArray;
+//             _nameArray = emptyArray;
+//             _priceArray = emptyArray;
+//             _linksArray = emptyArray;
+//             _imagesArray = emptyArray;
+             
              NSLog(@"its probably a dictionary");
              NSDictionary *jsonReq = (NSDictionary *)jsonObject;
              NSArray * values = [jsonReq objectForKey:@"categories"];
 //             NSLog(@"%@", NSStringFromClass([values[0] class]));
              NSLog(@"%@", values[0]); //change to watev, this is the first one, "Tools"
              NSLog(@"%@", [[values[0] objectForKey:@"links"][0]objectForKey:@"href"]);
+             
+             @autoreleasepool {
+                 NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+                 NSString *endpoint = [NSString stringWithFormat:@"%@",[[values[0] objectForKey:@"links"][0]objectForKey:@"href"]];
+                 [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",endpoint]]];
+                 [request addValue:@"l7xxa85a2511a8454491ac39f7a02cab7eb8" forHTTPHeaderField:@"apikey"];
+                 [request setHTTPMethod:@"GET"];
+                 
+                 NSHTTPURLResponse *urlResponse = nil;
+                 NSError *error = nil;
+                 NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
+                 NSString *result = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+                 NSLog(@"Response Code: %d", [urlResponse statusCode]);
+                 if ([urlResponse statusCode] >= 200 && [urlResponse statusCode] < 300) {
+                     //            NSLog(@"Response: %@", result);
+                 }
+                 NSLog(@"aweodcaowieacjweid %@",result);
+                 id jsonObject = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&jsonError];
+                 NSDictionary *jsonReq = (NSDictionary *)jsonObject;
+                 NSArray * values = [jsonReq objectForKey:@"products"];
+                 for (int x = 0; x<=10; x++){
+                     [_nameArray addObject:[values[x] objectForKey:@"name"]];
+                     [_priceArray addObject:[values[x] objectForKey:@"maximumPrice"]];
+                     [_linksArray addObject:[values[x] objectForKey:@"referralUrl"]];
+                     
+                     NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:[values[x] objectForKey:@"imageUrl"]]];
+                     UIImage * image = [UIImage imageWithData: imageData];
+                     [_imagesArray addObject:image];
+                 }
+             }
+             [self performSegueWithIdentifier:@"afterCamera" sender:self];
          }
-         [self performSegueWithIdentifier:@"afterCamera" sender:self];
      }];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"afterCamera"])
+    {
+        imagesViewController *nextController = [[imagesViewController alloc] init];
+        
+        nextController.namesArray = _nameArray;
+        nextController.pricesArray = _priceArray;
+        nextController.linksArray = _linksArray;
+        nextController.imagesArray = _imagesArray;
+        
+        NSLog(@"awo3idaciejcd %lu", (unsigned long)_priceArray.count);
+
+        [self.navigationController showViewController:nextController sender:self];
+    }
 }
 
 

@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface cameraViewController : UIViewController
+@property NSMutableArray *nameArray;
+@property NSMutableArray *linksArray;
+@property NSMutableArray *imagesArray;
+@property NSMutableArray *priceArray;
 
 @end

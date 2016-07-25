@@ -8,18 +8,17 @@
 
 #import "imagesViewController.h"
 #import "CollectionViewCell.h"
+#import "cameraViewController.h"
 
 @interface imagesViewController (){
     __weak IBOutlet UINavigationItem *navbarItem;
     __weak IBOutlet UICollectionView *CollectionView;
-    NSMutableArray *shopPhotos;
-    NSMutableArray *shopTitles;
-    NSMutableArray *shopCosts;
 }
 
 @end
 
 @implementation imagesViewController
+
 
 NSString* reuseIdentifier = @"cell";
 
@@ -27,15 +26,13 @@ NSString* reuseIdentifier = @"cell";
     [super viewDidLoad];
     CollectionView.dataSource = self;
     CollectionView.delegate = self;
-    
-    shopPhotos = [NSMutableArray arrayWithObjects:@"background", @"backButton", @"cameraButton", @"darkerBackButton",nil];
-    shopTitles = [NSMutableArray arrayWithObjects: @"background", @"backButton", @"cameraButton", @"darkerBackButton", nil];
-    shopCosts = [NSMutableArray arrayWithObjects: @"$5.5", @"5.5", @"5.5", @"5.5", nil];
+    NSLog(@"aowiecdoawiecmieodm %lu",(unsigned long)_namesArray.count);
+    NSLog(@"apwoedcawed %@", _pricesArray.count);
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return shopPhotos.count;
+    return _namesArray.count;
 }
 
 
@@ -44,16 +41,20 @@ NSString* reuseIdentifier = @"cell";
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
     UILabel *costLabel = (UILabel *)[cell viewWithTag:97];
-    costLabel.text = shopCosts[indexPath.row];
+    costLabel.text = _pricesArray[indexPath.row];
     
     UILabel *nameLabel = (UILabel *)[cell viewWithTag:98];
-    nameLabel.text = shopTitles[indexPath.row];
+    nameLabel.text = _namesArray[indexPath.row];
     
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:100];
-    imageView.image = [UIImage imageNamed:[shopPhotos objectAtIndex:indexPath.row]];
+    imageView.image = [UIImage imageNamed:[_imagesArray objectAtIndex:indexPath.row]];
     cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photoframe"]];
-    
+
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: _linksArray[indexPath.row]]];
 }
 
 
