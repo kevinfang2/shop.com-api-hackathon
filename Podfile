@@ -5,7 +5,8 @@ target 'trollappthing' do
   # Uncomment this line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
 	pod 'AFNetworking', '~> 2.0'
-    
+    pod "CloudSight", "~> 1.0"
+
   # Pods for trollappthing
 
   target 'trollappthingTests' do

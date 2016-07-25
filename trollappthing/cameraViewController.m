@@ -11,12 +11,18 @@
 #import <AVFoundation/AVFoundation.h>
 #import <Foundation/Foundation.h>
 #import "imagesViewController.h"
+#import <CloudSight/CloudSight.h>
+#import "ClarifaiClient.h"
+
+static NSString * const kAppID = @"wsoRfJNqSNH67q1qWDgJHizF6jcX0elwolubIirz";
+static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G";
 
 @interface cameraViewController (){
     AVCaptureStillImageOutput* stillImageOutput;
     __weak IBOutlet UIImageView *cameraView;
     __weak IBOutlet UILabel *titleLabel;
 }
+@property (strong, nonatomic) ClarifaiClient *client;
 
 @end
 
@@ -32,6 +38,15 @@
 }
 @end
 @implementation cameraViewController
+
+- (ClarifaiClient *)client {
+    if (!_client) {
+        _client = [[ClarifaiClient alloc] initWithAppID:kAppID appSecret:kAppSecret];
+        // Uncomment this to request embeddings. Contact us to enable embeddings for your app:
+        // _client.enableEmbed = YES;
+    }
+    return _client;
+}
 
 
 - (void)viewDidLoad {
@@ -129,6 +144,8 @@
         }
     }
     
+    
+    
     [stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection completionHandler: ^(CMSampleBufferRef imageSampleBuffer, NSError *error)
      {
          CFDictionaryRef exifAttachments = CMGetAttachment( imageSampleBuffer,kCGImagePropertyExifDictionary, NULL);
@@ -140,69 +157,95 @@
              NSLog(@"no attachments");
          }
          
+         
          NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageSampleBuffer];
          UIImage *image = [[UIImage alloc] initWithData:imageData];
          
          NSData *imageData2 = UIImageJPEGRepresentation(image, 0.0);
          NSString *encodedString = [imageData2 base64EncodedStringWithOptions:0];
-//         NSLog(@"%@", encodedString);
-         NSData *test = [self getRequest:(@"Same")];
+
+         [CloudSightConnection sharedInstance].consumerKey = @"w63eVgBk6UKS5zsK2ATaTA";
+         [CloudSightConnection sharedInstance].consumerSecret = @"EM8y1gD50g-PaBNVudqxuA";
          
-         NSError *jsonError = nil;
-         id jsonObject = [NSJSONSerialization JSONObjectWithData:test options:kNilOptions error:&jsonError];
+         CloudSightQuery *query = [[CloudSightQuery alloc] initWithImage:imageData2
+                                                              atLocation:CGPointMake(image.size.width/2, image.size.height/2)
+                                                            withDelegate:self
+                                                             atPlacemark: nil
+                                                            withDeviceId:[[[UIDevice currentDevice] identifierForVendor] UUIDString]];
          
-         if ([jsonObject isKindOfClass:[NSArray class]]) {
-             NSLog(@"its an array!");
-             NSArray *jsonArray = (NSArray *)jsonObject;
-             NSLog(@"jsonArray - %@",jsonArray);
-             
-             
-         }
-         else {
-//             NSMutableArray *emptyArray;
-//             _nameArray = emptyArray;
-//             _priceArray = emptyArray;
-//             _linksArray = emptyArray;
-//             _imagesArray = emptyArray;
-             
-             NSLog(@"its probably a dictionary");
-             NSDictionary *jsonReq = (NSDictionary *)jsonObject;
-             NSArray * values = [jsonReq objectForKey:@"categories"];
-//             NSLog(@"%@", NSStringFromClass([values[0] class]));
-             NSLog(@"%@", values[0]); //change to watev, this is the first one, "Tools"
-             NSLog(@"%@", [[values[0] objectForKey:@"links"][0]objectForKey:@"href"]);
-             
-             @autoreleasepool {
-                 NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-                 NSString *endpoint = [NSString stringWithFormat:@"%@",[[values[0] objectForKey:@"links"][0]objectForKey:@"href"]];
-                 [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",endpoint]]];
-                 [request addValue:@"l7xxa85a2511a8454491ac39f7a02cab7eb8" forHTTPHeaderField:@"apikey"];
-                 [request setHTTPMethod:@"GET"];
+         [query start];
+         
+         __block NSArray *tags;
+         [self.client recognizeJpegs:@[imageData2] completion:^(NSArray *results, NSError *error) {
+             // Handle the response from Clarifai. This happens asynchronously.
+             if (error) {
+                 NSLog(@"Error: %@", error);
+                 NSLog(@"Sorry, there was an error recognizing the image.");
+             } else {
+                 ClarifaiResult *result = results.firstObject;
                  
-                 NSHTTPURLResponse *urlResponse = nil;
-                 NSError *error = nil;
-                 NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
-                 NSString *result = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-                 NSLog(@"Response Code: %d", [urlResponse statusCode]);
-                 if ([urlResponse statusCode] >= 200 && [urlResponse statusCode] < 300) {
-                     //            NSLog(@"Response: %@", result);
+                 NSLog([NSString stringWithFormat:@"Tags:\n%@",
+                        [result.tags componentsJoinedByString:@", "]]);
+                 NSString *string = [NSString stringWithFormat:@"%@", result.tags];
+                 tags = [string componentsSeparatedByString: @","];
+                 NSLog(@"the first tag is %@", tags[0]);
+                 NSString *tag = tags[0];
+                 tag = [tag substringWithRange:NSMakeRange(6, [tag length] - 6)];
+                 NSLog(@"the modified tag is %@", tag);
+
+                 NSData *test = [self getRequest:(tag)];
+                 
+                 
+                 NSError *jsonError = nil;
+                 id jsonObject = [NSJSONSerialization JSONObjectWithData:test options:kNilOptions error:&jsonError];
+                 
+                 if ([jsonObject isKindOfClass:[NSArray class]]) {
+                     NSLog(@"its an array!");
+                     NSArray *jsonArray = (NSArray *)jsonObject;
+                     NSLog(@"jsonArray - %@",jsonArray);
                  }
-                 NSLog(@"aweodcaowieacjweid %@",result);
-                 id jsonObject = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&jsonError];
-                 NSDictionary *jsonReq = (NSDictionary *)jsonObject;
-                 NSArray * values = [jsonReq objectForKey:@"products"];
-                 for (int x = 0; x<=10; x++){
-                     [_nameArray addObject:[values[x] objectForKey:@"name"]];
-                     [_priceArray addObject:[values[x] objectForKey:@"maximumPrice"]];
-                     [_linksArray addObject:[values[x] objectForKey:@"referralUrl"]];
+                 else {
                      
-                     NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:[values[x] objectForKey:@"imageUrl"]]];
-                     UIImage * image = [UIImage imageWithData: imageData];
-                     [_imagesArray addObject:image];
+                     NSLog(@"its probably a dictionary");
+                     NSDictionary *jsonReq = (NSDictionary *)jsonObject;
+                     NSArray * values = [jsonReq objectForKey:@"categories"];
+                     //             NSLog(@"%@", NSStringFromClass([values[0] class]));
+                     NSLog(@"%@", values[0]); //change to watev, this is the first one, "Tools"
+                     NSLog(@"%@", [[values[0] objectForKey:@"links"][0]objectForKey:@"href"]);
+                     
+                     @autoreleasepool {
+                         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+                         NSString *endpoint = [NSString stringWithFormat:@"%@",[[values[0] objectForKey:@"links"][0]objectForKey:@"href"]];
+                         [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",endpoint]]];
+                         [request addValue:@"l7xxa85a2511a8454491ac39f7a02cab7eb8" forHTTPHeaderField:@"apikey"];
+                         [request setHTTPMethod:@"GET"];
+                         
+                         NSHTTPURLResponse *urlResponse = nil;
+                         NSError *error = nil;
+                         NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
+                         NSString *result = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+                         NSLog(@"Response Code: %d", [urlResponse statusCode]);
+                         if ([urlResponse statusCode] >= 200 && [urlResponse statusCode] < 300) {
+                             //            NSLog(@"Response: %@", result);
+                         }
+                         NSLog(@"aweodcaowieacjweid %@",result);
+                         id jsonObject = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&jsonError];
+                         NSDictionary *jsonReq = (NSDictionary *)jsonObject;
+                         NSArray * values = [jsonReq objectForKey:@"products"];
+                         for (int x = 0; x<=10; x++){
+                             [_nameArray addObject:[values[x] objectForKey:@"name"]];
+                             [_priceArray addObject:[values[x] objectForKey:@"maximumPrice"]];
+                             [_linksArray addObject:[values[x] objectForKey:@"referralUrl"]];
+                             
+                             NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:[values[x] objectForKey:@"imageUrl"]]];
+                             UIImage * image = [UIImage imageWithData: imageData];
+                             [_imagesArray addObject:image];
+                         }
+                     }
                  }
+                 [self performSegueWithIdentifier:@"afterCamera" sender:self];
              }
-             [self performSegueWithIdentifier:@"afterCamera" sender:self];
-         }
+         }];
      }];
 }
 
@@ -218,6 +261,7 @@
         nextController.imagesArray = _imagesArray;
         
         NSLog(@"awo3idaciejcd %lu", (unsigned long)_priceArray.count);
+        NSLog(@"awo3idaciejcd %lu", (unsigned long)nextController.pricesArray.count);
 
         [self.navigationController showViewController:nextController sender:self];
     }
@@ -247,6 +291,8 @@
         return responseData;
     }
 }
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -261,6 +307,45 @@
     }
     return nil;
 }
+
+
+- (void)cloudSightQueryDidFinishUploading:(CloudSightQuery *)query
+{
+    NSLog(@"uploaded");
+}
+
+- (void)cloudSightQueryDidFinishIdentifying:(CloudSightQuery *)query {
+    if (query.skipReason != nil) {
+        NSLog(@"Skipped: %@", query.skipReason);
+    } else {
+        NSLog(@"Identified: %@", query.title);
+    }
+}
+
+- (void)cloudSightQueryDidFail:(CloudSightQuery *)query withError:(NSError *)error {
+    NSLog(@"Error: %@", error);
+}
+
+
+-(void) sendRequest:(NSURLRequest*) request
+{
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
+     {
+         if (error)
+         {
+             NSLog(@"Error,%@", [error localizedDescription]);
+         }
+         else
+         {
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 //                 bg.backgroundColor = [UIColor blueColor];
+                 NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding]);
+             });
+         }
+     }];
+}
+
 
 
 @end
