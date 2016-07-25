@@ -56,7 +56,7 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
     _priceArray = [[NSMutableArray alloc] init];
     _linksArray = [[NSMutableArray alloc] init];
     _imagesArray = [[NSMutableArray alloc] init];
-    
+    _brandArray = [[NSMutableArray alloc] init];
     
     AVCaptureSession *session = [[AVCaptureSession alloc] init];
     session.sessionPreset = AVCaptureSessionPresetHigh;
@@ -215,6 +215,7 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
                          [_linksArray addObject:[values[x] objectForKey:@"referralUrl"]];
                          [_imagesArray addObject:[values[x] objectForKey:@"imageUrl"]];
                          [_brandArray addObject:[values[x] objectForKey:@"brand"]];
+                         NSLog(@"awedjaowiejdo %@", [values[x] objectForKey:@"brand"]);
                      }
                  }
                  

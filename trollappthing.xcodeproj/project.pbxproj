@@ -19,7 +19,6 @@
 		0AD6A2841D29C81100AE707C /* LandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD6A2831D29C81100AE707C /* LandingViewController.m */; };
 		0AD6A2871D29D75300AE707C /* imagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD6A2861D29D75300AE707C /* imagesViewController.m */; };
 		0AFAC79C1D29E12A001B25A7 /* cameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AFAC79B1D29E12A001B25A7 /* cameraViewController.m */; };
-		0AFAC79F1D29F92D001B25A7 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AFAC79E1D29F92D001B25A7 /* CollectionViewCell.m */; };
 		5062DFC4471133ABDDDF32E4 /* libPods-trollappthingUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 676341FF75031407AC359521 /* libPods-trollappthingUITests.a */; };
 		8790F76481DC03E08C6AD60B /* libPods-trollappthing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5894FB5426299594A39FF0AB /* libPods-trollappthing.a */; };
 		973016A88DA24EF3558749AC /* libPods-trollappthingTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44D1785E2835DDA2FD455779 /* libPods-trollappthingTests.a */; };
@@ -67,8 +66,6 @@
 		0AD6A2861D29D75300AE707C /* imagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imagesViewController.m; sourceTree = "<group>"; };
 		0AFAC79A1D29E12A001B25A7 /* cameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cameraViewController.h; sourceTree = "<group>"; };
 		0AFAC79B1D29E12A001B25A7 /* cameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cameraViewController.m; sourceTree = "<group>"; };
-		0AFAC79D1D29F92D001B25A7 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
-		0AFAC79E1D29F92D001B25A7 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		1B40208D4CFDED030AC3237D /* Pods-trollappthingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trollappthingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-trollappthingTests/Pods-trollappthingTests.release.xcconfig"; sourceTree = "<group>"; };
 		2240FF4C6DC6EBE1DA5D9F0C /* Pods-trollappthingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trollappthingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-trollappthingUITests/Pods-trollappthingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		244272B0AD26861BBE4758F6 /* Pods-trollappthingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trollappthingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-trollappthingTests/Pods-trollappthingTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -138,8 +135,6 @@
 				0AB52A811D2213C2003B5C0A /* Main.storyboard */,
 				00A26C181D45E49300007FCB /* searchViewController.h */,
 				00A26C191D45E49300007FCB /* searchViewController.m */,
-				0AFAC79D1D29F92D001B25A7 /* CollectionViewCell.h */,
-				0AFAC79E1D29F92D001B25A7 /* CollectionViewCell.m */,
 				0AFAC79A1D29E12A001B25A7 /* cameraViewController.h */,
 				0AFAC79B1D29E12A001B25A7 /* cameraViewController.m */,
 				0A9A97A51D45E004003A73C2 /* ClarifaiClient.h */,
@@ -466,7 +461,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AFAC79F1D29F92D001B25A7 /* CollectionViewCell.m in Sources */,
 				0AD6A2841D29C81100AE707C /* LandingViewController.m in Sources */,
 				0AFAC79C1D29E12A001B25A7 /* cameraViewController.m in Sources */,
 				0A9A97A71D45E004003A73C2 /* ClarifaiClient.m in Sources */,

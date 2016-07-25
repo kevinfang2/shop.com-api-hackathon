@@ -43,16 +43,19 @@ static NSString * const kAppSecret = @"14jeXj05O265YuxIRHGLq1lKN40odmDv0WBl2cga"
     }
     return _client;
 }
+- (IBAction)backButton:(id)sender {
+    [self unwindSegue];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     cameraView = [[cameraViewController alloc] init];
-    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 15, 90, 90)];
-    UIImage *backButtonImg = [UIImage imageNamed:@"darkerBackButton"];
-    [backButton setImage:backButtonImg forState:UIControlStateNormal];
-    [backButton addTarget:self action:@selector(unwindSegue) forControlEvents:UIControlEventTouchUpInside];
+//    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 15, 90, 90)];
+//    UIImage *backButtonImg = [UIImage imageNamed:@"darkerBackButton"];
+//    [backButton setImage:backButtonImg forState:UIControlStateNormal];
+//    [backButton addTarget:self action:@selector(unwindSegue) forControlEvents:UIControlEventTouchUpInside];
      self.searchField.delegate = self;
-    [self.view addSubview: backButton];
+//    [self.view addSubview: backButton];
     [_searchField becomeFirstResponder];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
@@ -62,6 +65,7 @@ static NSString * const kAppSecret = @"14jeXj05O265YuxIRHGLq1lKN40odmDv0WBl2cga"
     _priceArray = [[NSMutableArray alloc] init];
     _imagesArray = [[NSMutableArray alloc] init];
     _linksArray = [[NSMutableArray alloc] init];
+    _brandArray = [[NSMutableArray alloc] init];
     [self.view addGestureRecognizer:tap];
 }
 
