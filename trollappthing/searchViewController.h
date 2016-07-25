@@ -10,5 +10,8 @@
 #import "cameraViewController.h"
 
 @interface searchViewController : UIViewController <UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-
+@property NSMutableArray *nameArray;
+@property NSMutableArray *priceArray;
+@property NSMutableArray *linksArray;
+@property NSMutableArray *imagesArray;
 @end

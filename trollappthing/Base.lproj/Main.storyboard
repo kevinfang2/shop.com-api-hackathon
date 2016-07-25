@@ -166,6 +166,7 @@
                     <connections>
                         <outlet property="searchField" destination="t2L-qI-r1f" id="1XN-Qd-Per"/>
                         <segue destination="nYL-G9-rPS" kind="unwind" identifier="unwindSegue" unwindAction="prepareForUnwind:" id="6S5-dY-5LR"/>
+                        <segue destination="xnm-0f-a3E" kind="show" identifier="afterSearch" id="CWE-Ck-2BN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5SF-n1-EZm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -295,4 +296,7 @@
             <point key="canvasLocation" x="1021" y="393"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="CWE-Ck-2BN"/>
+    </inferredMetricsTieBreakers>
 </document>

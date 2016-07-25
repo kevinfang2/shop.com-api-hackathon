@@ -22,6 +22,18 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
 
 @end
 
+@implementation NSString (URLEncoding)
+//function used to encode query and matrix parameters
+-(NSString *)urlEncodeUsingEncoding:(NSStringEncoding)encoding {
+    return (__bridge NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,
+                                                                        (CFStringRef)self,
+                                                                        NULL,
+                                                                        (CFStringRef)@"!*'\"();:@&=+$,/?%#[]% ",
+                                                                        CFStringConvertNSStringEncodingToEncoding(encoding));
+}
+@end
+
+
 @implementation searchViewController
 - (ClarifaiClient *)client {
     if (!_client) {
@@ -46,6 +58,10 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
     
+    _nameArray = [[NSMutableArray alloc] init];
+    _priceArray = [[NSMutableArray alloc] init];
+    _imagesArray = [[NSMutableArray alloc] init];
+    _linksArray = [[NSMutableArray alloc] init];
     [self.view addGestureRecognizer:tap];
 }
 
@@ -144,41 +160,26 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
         
         NSLog(@"its probably a dictionary");
         NSDictionary *jsonReq = (NSDictionary *)jsonObject;
-        NSArray * values = [jsonReq objectForKey:@"categories"];
+        NSArray * values = [jsonReq objectForKey:@"products"];
         //             NSLog(@"%@", NSStringFromClass([values[0] class]));
         NSLog(@"%@", values[0]); //change to watev, this is the first one, "Tools"
-        NSLog(@"%@", [[values[0] objectForKey:@"links"][0]objectForKey:@"href"]);
-        
-        @autoreleasepool {
-            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-            NSString *endpoint = [NSString stringWithFormat:@"%@",[[values[0] objectForKey:@"links"][0]objectForKey:@"href"]];
-            [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",endpoint]]];
-            [request addValue:@"l7xxa85a2511a8454491ac39f7a02cab7eb8" forHTTPHeaderField:@"apikey"];
-            [request setHTTPMethod:@"GET"];
-            
-            NSHTTPURLResponse *urlResponse = nil;
-            NSError *error = nil;
-            NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
-            NSString *result = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-            NSLog(@"Response Code: %d", [urlResponse statusCode]);
-            if ([urlResponse statusCode] >= 200 && [urlResponse statusCode] < 300) {
-                //            NSLog(@"Response: %@", result);
-            }
-            NSLog(@"aweodcaowieacjweid %@",result);
-            id jsonObject = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&jsonError];
-            NSDictionary *jsonReq = (NSDictionary *)jsonObject;
-            NSArray * values = [jsonReq objectForKey:@"products"];
-            //            for (int x = 0; x<=10; x++){
-            //                [_nameArray addObject:[values[x] objectForKey:@"name"]];
-            //                [_priceArray addObject:[values[x] objectForKey:@"maximumPrice"]];
-            //                [_linksArray addObject:[values[x] objectForKey:@"referralUrl"]];
-            //
-            //                NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:[values[x] objectForKey:@"imageUrl"]]];
-            //                UIImage * image = [UIImage imageWithData: imageData];
-            //                [_imagesArray addObject:image];
-            //            }
+        NSLog(@"%@", [[values[0] objectForKey:@"links"][0]objectForKey:@"id"]);
+        for (int x = 0; x <= 11; x++){
+            [_nameArray addObject:[values[x] objectForKey:@"name"]];
+            [_priceArray addObject:[values[x] objectForKey:@"maximumPrice"]];
+            [_linksArray addObject:[values[x] objectForKey:@"referralUrl"]];
+            [_imagesArray addObject:[values[x] objectForKey:@"imageUrl"]];
         }
     }
+        
+    [[NSUserDefaults standardUserDefaults] setObject:_nameArray forKey:@"nameArray"];
+    [[NSUserDefaults standardUserDefaults] setObject:_priceArray forKey:@"priceArray"];
+    [[NSUserDefaults standardUserDefaults] setObject:_linksArray forKey:@"linkArray"];
+    [[NSUserDefaults standardUserDefaults] setObject:_imagesArray forKey:@"imageArray"];
+        
+    NSLog(@"awo3idaciejcd %lu", (unsigned long)_priceArray.count);
+    
+    [self performSegueWithIdentifier:@"afterSearch" sender:self];
 }
 
 - (void)cloudSightQueryDidFinishUploading:(CloudSightQuery *)query

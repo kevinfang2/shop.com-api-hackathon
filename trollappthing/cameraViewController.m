@@ -262,11 +262,9 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
 - (NSData *) getRequest:(NSString *)itemName {
     @autoreleasepool {
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-        NSString *endpoint = [NSString stringWithFormat:@"https://api.shop.com/AffiliatePublisherNetwork/v1/categories"];
-        NSString *queryParams = [NSString stringWithFormat:@"?%@&%@",
-                                 [NSString stringWithFormat:@"%@=%@", [@"publisherID" urlEncodeUsingEncoding:NSUTF8StringEncoding], [@"TEST" urlEncodeUsingEncoding:NSUTF8StringEncoding]],
-                                 [NSString stringWithFormat:@"%@=%@", [@"locale" urlEncodeUsingEncoding:NSUTF8StringEncoding], [@"en_US" urlEncodeUsingEncoding:NSUTF8StringEncoding]]];
-        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",endpoint,queryParams]]];
+        NSString *endpoint = [NSString stringWithFormat:@"https://api.shop.com/AffiliatePublisherNetwork/v1/products?PublisherID=TEST&locale=en_US&term=%@",itemName];
+        
+        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",endpoint]]];
         [request addValue:@"l7xxa85a2511a8454491ac39f7a02cab7eb8" forHTTPHeaderField:@"apikey"];
         [request setHTTPMethod:@"GET"];
         
@@ -290,6 +288,8 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
             [alert addAction:defaultAction];
             [self presentViewController:alert animated:YES completion:nil];
         }
+        NSString *tempprint = [[NSString alloc]initWithData:responseData encoding:NSUTF8StringEncoding];
+        NSLog(@"%@", tempprint);
         return responseData;
     }
 }
