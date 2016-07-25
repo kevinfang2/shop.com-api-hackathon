@@ -26,6 +26,7 @@ NSString* reuseIdentifier = @"cell";
     [super viewDidLoad];
     CollectionView.dataSource = self;
     CollectionView.delegate = self;
+    
     _namesArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"nameArray"];;
     _pricesArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"priceArray"];
     _imagesArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"imageArray"];
@@ -36,6 +37,13 @@ NSString* reuseIdentifier = @"cell";
     //    NSLog(@"aoweidjoawiejdoa %@", _namesArray[0]);
 }
 
+- (IBAction)reinitializeArrays:(id)sender {
+    NSArray *emptyArray;
+    [[NSUserDefaults standardUserDefaults] setObject:emptyArray forKey:@"nameArray"];
+    [[NSUserDefaults standardUserDefaults] setObject:emptyArray forKey:@"priceArray"];
+    [[NSUserDefaults standardUserDefaults] setObject:emptyArray forKey:@"linkArray"];
+    [[NSUserDefaults standardUserDefaults] setObject:emptyArray forKey:@"imageArray"];
+}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     NSLog(@"apwoedcawed %lu", (unsigned long)_pricesArray.count);

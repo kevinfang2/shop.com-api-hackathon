@@ -157,7 +157,6 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
              NSLog(@"no attachments");
          }
          
-         
          NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageSampleBuffer];
          UIImage *image = [[UIImage alloc] initWithData:imageData];
          
@@ -205,12 +204,6 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
                      NSLog(@"jsonArray - %@",jsonArray);
                  }
                  else {
-                     NSMutableArray *empty;
-                     _nameArray = empty;
-                     _priceArray = empty;
-                     _imageArray = empty;
-                     _linksArray = empty;
-                     
                      NSLog(@"its probably a dictionary");
                      NSDictionary *jsonReq = (NSDictionary *)jsonObject;
                      NSArray * values = [jsonReq objectForKey:@"categories"];

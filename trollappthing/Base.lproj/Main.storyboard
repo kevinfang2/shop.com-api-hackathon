@@ -245,7 +245,7 @@
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="qeG-ep-C2L" id="SVm-sr-9cp"/>
+                                    <outlet property="dataSource" destination="qeG-ep-C2L" id="KUT-bO-MXx"/>
                                     <outlet property="delegate" destination="qeG-ep-C2L" id="ado-ia-btp"/>
                                 </connections>
                             </collectionView>
@@ -262,6 +262,7 @@
                     <navigationItem key="navigationItem" title="Items" id="p8p-XM-mcO">
                         <barButtonItem key="rightBarButtonItem" title="Done" id="E3Q-5I-DIf">
                             <connections>
+                                <action selector="reinitializeArrays:" destination="qeG-ep-C2L" id="vQ3-JY-vy4"/>
                                 <segue destination="wZS-XT-D6G" kind="unwind" unwindAction="prepareForUnwind:" id="5BV-oO-wWO"/>
                             </connections>
                         </barButtonItem>
