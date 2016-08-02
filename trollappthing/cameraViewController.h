@@ -14,5 +14,9 @@
 @property NSMutableArray *imagesArray;
 @property NSMutableArray *priceArray;
 @property NSMutableArray *brandArray;
+
+@property (nonatomic,retain) UIActivityIndicatorView *activityIndicatorObject;
+
+
 - (NSData *)getRequest:(NSString *)itemName;
 @end

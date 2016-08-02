@@ -54,16 +54,41 @@
                                     <segue destination="HIy-TV-2O7" kind="show" id="8Ba-tC-swL"/>
                                 </connections>
                             </button>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="AAh-VB-oCt">
+                                <rect key="frame" x="60" y="534" width="480" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="1HE-7S-YEG"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1HE-7S-YEG"/>
+                                    </mask>
+                                </variation>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.69329522919999997" blue="0.96719316460000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="11G-uy-go0" firstAttribute="centerX" secondItem="9tx-ds-C1l" secondAttribute="centerX" id="0oI-7J-Bed"/>
                             <constraint firstItem="fXw-oi-Eyh" firstAttribute="centerX" secondItem="9tx-ds-C1l" secondAttribute="centerX" id="44r-BQ-3zo"/>
+                            <constraint firstItem="AAh-VB-oCt" firstAttribute="top" secondItem="9tx-ds-C1l" secondAttribute="topMargin" constant="15" id="4Pb-sE-Bn9"/>
                             <constraint firstItem="9bH-HS-Atl" firstAttribute="centerY" secondItem="9tx-ds-C1l" secondAttribute="centerY" constant="28.5" id="4ej-hK-OP1"/>
+                            <constraint firstAttribute="trailing" secondItem="AAh-VB-oCt" secondAttribute="trailing" id="B8m-ai-rDA"/>
+                            <constraint firstItem="AAh-VB-oCt" firstAttribute="centerX" secondItem="9tx-ds-C1l" secondAttribute="centerX" id="EgI-y2-lbt"/>
+                            <constraint firstItem="AAh-VB-oCt" firstAttribute="leading" secondItem="9tx-ds-C1l" secondAttribute="leading" id="GGr-kh-OkM"/>
+                            <constraint firstItem="AAh-VB-oCt" firstAttribute="centerX" secondItem="9tx-ds-C1l" secondAttribute="centerX" id="GWn-pN-lWJ"/>
                             <constraint firstItem="fXw-oi-Eyh" firstAttribute="centerY" secondItem="9tx-ds-C1l" secondAttribute="centerY" constant="-56" id="jPb-zu-xs1"/>
                             <constraint firstItem="11G-uy-go0" firstAttribute="centerY" secondItem="9tx-ds-C1l" secondAttribute="centerY" constant="91" id="jlD-ff-ThM"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="AAh-VB-oCt" secondAttribute="bottom" id="x0C-Av-vBu"/>
                             <constraint firstItem="9bH-HS-Atl" firstAttribute="centerX" secondItem="9tx-ds-C1l" secondAttribute="centerX" id="x38-pF-46D"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4Pb-sE-Bn9"/>
+                                <exclude reference="B8m-ai-rDA"/>
+                                <exclude reference="EgI-y2-lbt"/>
+                                <exclude reference="GGr-kh-OkM"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="cameraButton" destination="9bH-HS-Atl" id="mXE-hs-KUX"/>
@@ -376,6 +401,6 @@
         <image name="upload" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CWE-Ck-2BN"/>
+        <segue reference="KTq-qb-ZUZ"/>
     </inferredMetricsTieBreakers>
 </document>

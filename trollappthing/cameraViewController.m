@@ -96,6 +96,7 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
            forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:cameraButton];
     
+
     NSMutableAttributedString *mat = [titleLabel.attributedText mutableCopy];
     [mat addAttributes:@{NSUnderlineStyleAttributeName: @(NSUnderlineStyleSingle)} range:NSMakeRange (0, mat.length)];
     titleLabel.attributedText = mat;
@@ -116,6 +117,7 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
 
 -(void) capture
 {
+    
     cameraView.backgroundColor = [UIColor whiteColor];
     [UIView animateWithDuration:0.2 delay:0.0 options:
      UIViewAnimationOptionCurveEaseIn animations:^{
@@ -225,7 +227,6 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
                  [[NSUserDefaults standardUserDefaults] setObject:_imagesArray forKey:@"imageArray"];
                  [[NSUserDefaults standardUserDefaults] setObject:_brandArray forKey:@"brandArray"];
                  [[NSUserDefaults standardUserDefaults] setValue:tag forKey:@"title"];
-                 
                  NSLog(@"awo3idaciejcd %lu", (unsigned long)_priceArray.count);
                  
                  [self performSegueWithIdentifier:@"afterCamera" sender:self];
