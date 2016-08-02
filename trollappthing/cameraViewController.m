@@ -196,40 +196,51 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
                  
                  NSData *test = [self getRequest:(tag)];
                  
-                 
-                 NSError *jsonError = nil;
-                 id jsonObject = [NSJSONSerialization JSONObjectWithData:test options:kNilOptions error:&jsonError];
-                 
-                 if ([jsonObject isKindOfClass:[NSArray class]]) {
-                     NSLog(@"its an array!");
-                     NSArray *jsonArray = (NSArray *)jsonObject;
-                     NSLog(@"jsonArray - %@",jsonArray);
+                 if (test != 0) {
+                     NSError *jsonError = nil;
+                     id jsonObject = [NSJSONSerialization JSONObjectWithData:test options:kNilOptions error:&jsonError];
+                     
+                     if ([jsonObject isKindOfClass:[NSArray class]]) {
+                         NSLog(@"its an array!");
+                         NSArray *jsonArray = (NSArray *)jsonObject;
+                         NSLog(@"jsonArray - %@",jsonArray);
+                     }
+                     else {
+                         NSLog(@"its probably a dictionary");
+                         NSDictionary *jsonReq = (NSDictionary *)jsonObject;
+                         NSArray * values = [jsonReq objectForKey:@"products"];
+                         
+    //                     id jsonObject = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&jsonError];
+                         for (int x = 0; x<=10; x++){
+                             [_nameArray addObject:[values[x] objectForKey:@"name"]];
+                             [_priceArray addObject:[values[x] objectForKey:@"maximumPrice"]];
+                             [_linksArray addObject:[values[x] objectForKey:@"referralUrl"]];
+                             [_imagesArray addObject:[values[x] objectForKey:@"imageUrl"]];
+                             [_brandArray addObject:[values[x] objectForKey:@"brand"]];
+                             NSLog(@"awedjaowiejdo %@", [values[x] objectForKey:@"brand"]);
+                         }
+                     }
+                     
+                     [[NSUserDefaults standardUserDefaults] setObject:_nameArray forKey:@"nameArray"];
+                     [[NSUserDefaults standardUserDefaults] setObject:_priceArray forKey:@"priceArray"];
+                     [[NSUserDefaults standardUserDefaults] setObject:_linksArray forKey:@"linkArray"];
+                     [[NSUserDefaults standardUserDefaults] setObject:_imagesArray forKey:@"imageArray"];
+                     [[NSUserDefaults standardUserDefaults] setObject:_brandArray forKey:@"brandArray"];
+                     [[NSUserDefaults standardUserDefaults] setValue:tag forKey:@"title"];
+                     NSLog(@"awo3idaciejcd %lu", (unsigned long)_priceArray.count);
+                     
+                     [self performSegueWithIdentifier:@"afterCamera" sender:self];
                  }
                  else {
-                     NSLog(@"its probably a dictionary");
-                     NSDictionary *jsonReq = (NSDictionary *)jsonObject;
-                     NSArray * values = [jsonReq objectForKey:@"products"];
+                     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Service Unavailable"
+                                                                                    message:@"Shop.com's API is unavailable at this time."
+                                                                             preferredStyle:UIAlertControllerStyleAlert];
+                     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                           handler:^(UIAlertAction * action) {}];
                      
-//                     id jsonObject = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&jsonError];
-                     for (int x = 0; x<=10; x++){
-                         [_nameArray addObject:[values[x] objectForKey:@"name"]];
-                         [_priceArray addObject:[values[x] objectForKey:@"maximumPrice"]];
-                         [_linksArray addObject:[values[x] objectForKey:@"referralUrl"]];
-                         [_imagesArray addObject:[values[x] objectForKey:@"imageUrl"]];
-                         [_brandArray addObject:[values[x] objectForKey:@"brand"]];
-                         NSLog(@"awedjaowiejdo %@", [values[x] objectForKey:@"brand"]);
-                     }
+                     [alert addAction:defaultAction];
+                     [self presentViewController:alert animated:YES completion:nil];
                  }
-                 
-                 [[NSUserDefaults standardUserDefaults] setObject:_nameArray forKey:@"nameArray"];
-                 [[NSUserDefaults standardUserDefaults] setObject:_priceArray forKey:@"priceArray"];
-                 [[NSUserDefaults standardUserDefaults] setObject:_linksArray forKey:@"linkArray"];
-                 [[NSUserDefaults standardUserDefaults] setObject:_imagesArray forKey:@"imageArray"];
-                 [[NSUserDefaults standardUserDefaults] setObject:_brandArray forKey:@"brandArray"];
-                 [[NSUserDefaults standardUserDefaults] setValue:tag forKey:@"title"];
-                 NSLog(@"awo3idaciejcd %lu", (unsigned long)_priceArray.count);
-                 
-                 [self performSegueWithIdentifier:@"afterCamera" sender:self];
              }
          }];
      }];
@@ -256,20 +267,14 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
         if ([urlResponse statusCode] >= 200 && [urlResponse statusCode] < 300) {
             //            NSLog(@"Response: %@", result);
         }
-        if([urlResponse statusCode] == 0){
-            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Server Died Sorry"
-                                                                           message:@"The app might crash now"
-                                                                    preferredStyle:UIAlertControllerStyleAlert];
-            
-            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                  handler:^(UIAlertAction * action) {}];
-            
-            [alert addAction:defaultAction];
-            [self presentViewController:alert animated:YES completion:nil];
-        }
         NSString *tempprint = [[NSString alloc]initWithData:responseData encoding:NSUTF8StringEncoding];
         NSLog(@"%@", tempprint);
-        return responseData;
+        if([urlResponse statusCode] == 0 || [urlResponse statusCode] == 503){
+            return 0;
+        }
+        else {
+            return responseData;
+        }
     }
 }
 

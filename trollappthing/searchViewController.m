@@ -15,6 +15,7 @@ static NSString * const kAppSecret = @"14jeXj05O265YuxIRHGLq1lKN40odmDv0WBl2cga"
 
 @interface searchViewController (){
     cameraViewController *cameraView;
+    __weak IBOutlet UIButton *searchButton;
 }
 
 @property (weak, nonatomic) IBOutlet UITextField *searchField;
@@ -49,6 +50,9 @@ static NSString * const kAppSecret = @"14jeXj05O265YuxIRHGLq1lKN40odmDv0WBl2cga"
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    searchButton.backgroundColor = [UIColor whiteColor];
+    searchButton.layer.cornerRadius = 5;
+    searchButton.layer.masksToBounds = YES;
     cameraView = [[cameraViewController alloc] init];
 //    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 15, 90, 90)];
 //    UIImage *backButtonImg = [UIImage imageNamed:@"darkerBackButton"];
@@ -152,39 +156,51 @@ static NSString * const kAppSecret = @"14jeXj05O265YuxIRHGLq1lKN40odmDv0WBl2cga"
 
 -(void)getRequest:(NSString *)searchQuery {
     NSData *test = [cameraView getRequest:(searchQuery)];
-    NSError *jsonError = nil;
-    id jsonObject = [NSJSONSerialization JSONObjectWithData:test options:kNilOptions error:&jsonError];
-    
-    if ([jsonObject isKindOfClass:[NSArray class]]) {
-        NSLog(@"its an array!");
-        NSArray *jsonArray = (NSArray *)jsonObject;
-        NSLog(@"jsonArray - %@",jsonArray);
+    if (test != 0) {
+        NSError *jsonError = nil;
+        id jsonObject = [NSJSONSerialization JSONObjectWithData:test options:kNilOptions error:&jsonError];
+        
+        if ([jsonObject isKindOfClass:[NSArray class]]) {
+            NSLog(@"its an array!");
+            NSArray *jsonArray = (NSArray *)jsonObject;
+            NSLog(@"jsonArray - %@",jsonArray);
+        }
+        else {
+            
+            NSLog(@"its probably a dictionary");
+            NSDictionary *jsonReq = (NSDictionary *)jsonObject;
+            NSArray * values = [jsonReq objectForKey:@"products"];
+            //             NSLog(@"%@", NSStringFromClass([values[0] class]));
+            NSLog(@"%@", values[0]); //change to watev, this is the first one, "Tools"
+            for (int x = 0; x <= 11; x++){
+                [_nameArray addObject:[values[x] objectForKey:@"name"]];
+                [_priceArray addObject:[values[x] objectForKey:@"maximumPrice"]];
+                [_linksArray addObject:[values[x] objectForKey:@"referralUrl"]];
+                [_imagesArray addObject:[values[x] objectForKey:@"imageUrl"]];
+                [_brandArray addObject:[values[x] objectForKey:@"brand"]];
+            }
+        }
+            
+        [[NSUserDefaults standardUserDefaults] setObject:_nameArray forKey:@"nameArray"];
+        [[NSUserDefaults standardUserDefaults] setObject:_priceArray forKey:@"priceArray"];
+        [[NSUserDefaults standardUserDefaults] setObject:_linksArray forKey:@"linkArray"];
+        [[NSUserDefaults standardUserDefaults] setObject:_imagesArray forKey:@"imageArray"];
+        [[NSUserDefaults standardUserDefaults] setObject:_brandArray forKey:@"brandArray"];
+
+        NSLog(@"awo3idaciejcd %lu", (unsigned long)_priceArray.count);
+        
+        [self performSegueWithIdentifier:@"afterSearch" sender:self];
     }
     else {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Service Unavailable"
+                                                                       message:@"Shop.com's API is unavailable at this time."
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
         
-        NSLog(@"its probably a dictionary");
-        NSDictionary *jsonReq = (NSDictionary *)jsonObject;
-        NSArray * values = [jsonReq objectForKey:@"products"];
-        //             NSLog(@"%@", NSStringFromClass([values[0] class]));
-        NSLog(@"%@", values[0]); //change to watev, this is the first one, "Tools"
-        for (int x = 0; x <= 11; x++){
-            [_nameArray addObject:[values[x] objectForKey:@"name"]];
-            [_priceArray addObject:[values[x] objectForKey:@"maximumPrice"]];
-            [_linksArray addObject:[values[x] objectForKey:@"referralUrl"]];
-            [_imagesArray addObject:[values[x] objectForKey:@"imageUrl"]];
-            [_brandArray addObject:[values[x] objectForKey:@"brand"]];
-        }
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
     }
-        
-    [[NSUserDefaults standardUserDefaults] setObject:_nameArray forKey:@"nameArray"];
-    [[NSUserDefaults standardUserDefaults] setObject:_priceArray forKey:@"priceArray"];
-    [[NSUserDefaults standardUserDefaults] setObject:_linksArray forKey:@"linkArray"];
-    [[NSUserDefaults standardUserDefaults] setObject:_imagesArray forKey:@"imageArray"];
-    [[NSUserDefaults standardUserDefaults] setObject:_brandArray forKey:@"brandArray"];
-
-    NSLog(@"awo3idaciejcd %lu", (unsigned long)_priceArray.count);
-    
-    [self performSegueWithIdentifier:@"afterSearch" sender:self];
 }
 
 - (void)cloudSightQueryDidFinishUploading:(CloudSightQuery *)query
