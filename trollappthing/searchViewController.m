@@ -204,7 +204,7 @@ static NSString * const kAppSecret = @"14jeXj05O265YuxIRHGLq1lKN40odmDv0WBl2cga"
     NSLog(@"Error: %@", error);
 }
 -(void)dismissKeyboard {
-    [_searchField resignFirstResponder];
+//    [_searchField resignFirstResponder];
 }
 
 

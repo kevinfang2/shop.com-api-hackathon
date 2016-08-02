@@ -48,8 +48,8 @@ EOM
       ibtool --reference-external-strings-file --errors --warnings --notices --minimum-deployment-target ${!DEPLOYMENT_TARGET_SETTING_NAME} --output-format human-readable-text --compile "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename \"$RESOURCE_PATH\" .storyboard`.storyboardc" "$RESOURCE_PATH" --sdk "${SDKROOT}" ${TARGET_DEVICE_ARGS}
       ;;
     *.xib)
-      echo "ibtool --reference-external-strings-file --errors --warnings --notices --minimum-deployment-target ${!DEPLOYMENT_TARGET_SETTING_NAME} --output-format human-readable-text --compile ${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename \"$RESOURCE_PATH\" .xib`.nib $RESOURCE_PATH --sdk ${SDKROOT} ${TARGET_DEVICE_ARGS}"
-      ibtool --reference-external-strings-file --errors --warnings --notices --minimum-deployment-target ${!DEPLOYMENT_TARGET_SETTING_NAME} --output-format human-readable-text --compile "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename \"$RESOURCE_PATH\" .xib`.nib" "$RESOURCE_PATH" --sdk "${SDKROOT}" ${TARGET_DEVICE_ARGS}
+      echo "ibtool --reference-external-strings-file --errors --warnings --notices --minimum-deployment-target ${!DEPLOYMENT_TARGET_SETTING_NAME} --output-format human-readable-text --compile ${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename \"$RESOURCE_PATH\" .xib`.nib $RESOURCE_PATH --sdk ${SDKROOT}"
+      ibtool --reference-external-strings-file --errors --warnings --notices --minimum-deployment-target ${!DEPLOYMENT_TARGET_SETTING_NAME} --output-format human-readable-text --compile "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename \"$RESOURCE_PATH\" .xib`.nib" "$RESOURCE_PATH" --sdk "${SDKROOT}"
       ;;
     *.framework)
       echo "mkdir -p ${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
@@ -79,6 +79,50 @@ EOM
       ;;
   esac
 }
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "mopub-ios-sdk/MoPubSDK/Internal/Common/MPAdBrowserController.xib"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn@2x.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn@3x.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPCloseButtonX.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPCloseButtonX@2x.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPCloseButtonX@3x.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPDAAIcon.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPDAAIcon@2x.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPDAAIcon@3x.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPMutedBtn.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPMutedBtn@2x.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPMutedBtn@3x.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPPlayBtn.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPPlayBtn@2x.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPPlayBtn@3x.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPUnmutedBtn.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPUnmutedBtn@2x.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPUnmutedBtn@3x.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MRAID.bundle"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "mopub-ios-sdk/MoPubSDK/Internal/Common/MPAdBrowserController.xib"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn@2x.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn@3x.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPCloseButtonX.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPCloseButtonX@2x.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPCloseButtonX@3x.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPDAAIcon.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPDAAIcon@2x.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPDAAIcon@3x.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPMutedBtn.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPMutedBtn@2x.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPMutedBtn@3x.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPPlayBtn.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPPlayBtn@2x.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPPlayBtn@3x.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPUnmutedBtn.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPUnmutedBtn@2x.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MPUnmutedBtn@3x.png"
+  install_resource "mopub-ios-sdk/MoPubSDK/Resources/MRAID.bundle"
+fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

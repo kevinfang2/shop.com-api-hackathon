@@ -6,6 +6,7 @@ target 'trollappthing' do
   # use_frameworks!
 	pod 'AFNetworking', '~> 2.0'
     pod "CloudSight", "~> 1.0"
+	pod 'mopub-ios-sdk', "~> 4.7"
 
   # Pods for trollappthing
 

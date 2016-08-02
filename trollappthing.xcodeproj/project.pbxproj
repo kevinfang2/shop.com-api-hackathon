@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		00A26C1A1D45E49300007FCB /* searchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A26C191D45E49300007FCB /* searchViewController.m */; };
-		0A3194831D5042DE005A3162 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3194821D5042DE005A3162 /* iAd.framework */; };
 		0A9A97A71D45E004003A73C2 /* ClarifaiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A97A61D45E004003A73C2 /* ClarifaiClient.m */; };
 		0AB52A7A1D2213C2003B5C0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB52A791D2213C2003B5C0A /* main.m */; };
 		0AB52A7D1D2213C2003B5C0A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB52A7C1D2213C2003B5C0A /* AppDelegate.m */; };
@@ -43,6 +42,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00127B5E1D50505A00E5F09A /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		00127B601D50506300E5F09A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		00127B611D50506300E5F09A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		00127B641D50507400E5F09A /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		00127B661D50508600E5F09A /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		00127B681D5050AD00E5F09A /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		00127B691D5050AD00E5F09A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		00127B6A1D5050AD00E5F09A /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		00127B6B1D5050AD00E5F09A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		00127B6C1D5050AD00E5F09A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		00127B6D1D5050AD00E5F09A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		00127B6E1D5050AD00E5F09A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		00A26C181D45E49300007FCB /* searchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchViewController.h; sourceTree = "<group>"; };
 		00A26C191D45E49300007FCB /* searchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchViewController.m; sourceTree = "<group>"; };
 		0A3194821D5042DE005A3162 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
@@ -84,7 +95,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A3194831D5042DE005A3162 /* iAd.framework in Frameworks */,
 				8790F76481DC03E08C6AD60B /* libPods-trollappthing.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,6 +193,18 @@
 		2530D7BDDBFEE0C0D90A72E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				00127B681D5050AD00E5F09A /* EventKitUI.framework */,
+				00127B691D5050AD00E5F09A /* Foundation.framework */,
+				00127B6A1D5050AD00E5F09A /* MediaPlayer.framework */,
+				00127B6B1D5050AD00E5F09A /* QuartzCore.framework */,
+				00127B6C1D5050AD00E5F09A /* StoreKit.framework */,
+				00127B6D1D5050AD00E5F09A /* SystemConfiguration.framework */,
+				00127B6E1D5050AD00E5F09A /* UIKit.framework */,
+				00127B661D50508600E5F09A /* CoreMedia.framework */,
+				00127B641D50507400E5F09A /* EventKit.framework */,
+				00127B601D50506300E5F09A /* CoreGraphics.framework */,
+				00127B611D50506300E5F09A /* CoreLocation.framework */,
+				00127B5E1D50505A00E5F09A /* AdSupport.framework */,
 				0A3194821D5042DE005A3162 /* iAd.framework */,
 				5894FB5426299594A39FF0AB /* libPods-trollappthing.a */,
 				44D1785E2835DDA2FD455779 /* libPods-trollappthingTests.a */,
@@ -211,12 +233,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0AB52AA21D2213C2003B5C0A /* Build configuration list for PBXNativeTarget "trollappthing" */;
 			buildPhases = (
+				483542DC1AFA4959BE876208 /* 📦 Check Pods Manifest.lock */,
 				61C8CCCFD764617F9E270C6D /* [CP] Check Pods Manifest.lock */,
 				0AB52A711D2213C2003B5C0A /* Sources */,
 				0AB52A721D2213C2003B5C0A /* Frameworks */,
 				0AB52A731D2213C2003B5C0A /* Resources */,
 				3FF243CEC447B411E3AEA19E /* [CP] Embed Pods Frameworks */,
 				6C5A4A914F5689CB5E58D4B3 /* [CP] Copy Pods Resources */,
+				D48343764472108D07F81BE5 /* 📦 Embed Pods Frameworks */,
+				E23AA9329B0CDE34E9652485 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -231,12 +256,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0AB52AA51D2213C2003B5C0A /* Build configuration list for PBXNativeTarget "trollappthingTests" */;
 			buildPhases = (
+				218619D28517A8DBB1224ACE /* 📦 Check Pods Manifest.lock */,
 				DE3947F50D8DC5535A991FCD /* [CP] Check Pods Manifest.lock */,
 				0AB52A8A1D2213C2003B5C0A /* Sources */,
 				0AB52A8B1D2213C2003B5C0A /* Frameworks */,
 				0AB52A8C1D2213C2003B5C0A /* Resources */,
 				B110C45C159CB2F248867266 /* [CP] Embed Pods Frameworks */,
 				77401DE3725992E489AB8B45 /* [CP] Copy Pods Resources */,
+				803CE18E809E79019E044582 /* 📦 Embed Pods Frameworks */,
+				DA5F394100D674E1A6A781DB /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -252,11 +280,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0AB52AA81D2213C2003B5C0A /* Build configuration list for PBXNativeTarget "trollappthingUITests" */;
 			buildPhases = (
+				A6F4113304845EA7152D4DF3 /* 📦 Check Pods Manifest.lock */,
 				024BDEAB580C59A7519B1D27 /* [CP] Check Pods Manifest.lock */,
 				0AB52A951D2213C2003B5C0A /* Sources */,
 				0AB52A961D2213C2003B5C0A /* Frameworks */,
 				0AB52A971D2213C2003B5C0A /* Resources */,
 				29EE13C7C1E3BCD6E0DAE607 /* [CP] Copy Pods Resources */,
+				5A836503E6F479D52BA43CCB /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -353,6 +383,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		218619D28517A8DBB1224ACE /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		29EE13C7C1E3BCD6E0DAE607 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -381,6 +426,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-trollappthing/Pods-trollappthing-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		483542DC1AFA4959BE876208 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5A836503E6F479D52BA43CCB /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-trollappthingUITests/Pods-trollappthingUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		61C8CCCFD764617F9E270C6D /* [CP] Check Pods Manifest.lock */ = {
@@ -428,6 +503,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-trollappthingTests/Pods-trollappthingTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		803CE18E809E79019E044582 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-trollappthingTests/Pods-trollappthingTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6F4113304845EA7152D4DF3 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		B110C45C159CB2F248867266 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -443,6 +548,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-trollappthingTests/Pods-trollappthingTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D48343764472108D07F81BE5 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-trollappthing/Pods-trollappthing-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA5F394100D674E1A6A781DB /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-trollappthingTests/Pods-trollappthingTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		DE3947F50D8DC5535A991FCD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -456,6 +591,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E23AA9329B0CDE34E9652485 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-trollappthing/Pods-trollappthing-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
