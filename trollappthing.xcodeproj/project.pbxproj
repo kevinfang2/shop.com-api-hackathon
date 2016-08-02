@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		006400B91D50549B00728466 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006400B81D50549B00728466 /* SafariServices.framework */; };
 		00A26C1A1D45E49300007FCB /* searchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A26C191D45E49300007FCB /* searchViewController.m */; };
 		0A9A97A71D45E004003A73C2 /* ClarifaiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A97A61D45E004003A73C2 /* ClarifaiClient.m */; };
 		0AB52A7A1D2213C2003B5C0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB52A791D2213C2003B5C0A /* main.m */; };
@@ -54,6 +55,7 @@
 		00127B6C1D5050AD00E5F09A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		00127B6D1D5050AD00E5F09A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		00127B6E1D5050AD00E5F09A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		006400B81D50549B00728466 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		00A26C181D45E49300007FCB /* searchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchViewController.h; sourceTree = "<group>"; };
 		00A26C191D45E49300007FCB /* searchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchViewController.m; sourceTree = "<group>"; };
 		0A3194821D5042DE005A3162 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
@@ -95,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				006400B91D50549B00728466 /* SafariServices.framework in Frameworks */,
 				8790F76481DC03E08C6AD60B /* libPods-trollappthing.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +196,7 @@
 		2530D7BDDBFEE0C0D90A72E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				006400B81D50549B00728466 /* SafariServices.framework */,
 				00127B681D5050AD00E5F09A /* EventKitUI.framework */,
 				00127B691D5050AD00E5F09A /* Foundation.framework */,
 				00127B6A1D5050AD00E5F09A /* MediaPlayer.framework */,

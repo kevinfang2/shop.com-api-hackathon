@@ -8,8 +8,10 @@
 
 #import "imagesViewController.h"
 #import "cameraViewController.h"
+#import <SafariServices/SafariServices.h>
 
-@interface imagesViewController (){
+
+@interface imagesViewController () <SFSafariViewControllerDelegate> {
     __weak IBOutlet UINavigationItem *navbarItem;
     __weak IBOutlet UICollectionView *CollectionView;
 }
@@ -51,7 +53,6 @@ NSString* reuseIdentifier = @"cell";
     NSLog(@"apwoedcawed %lu", (unsigned long)_pricesArray.count);
     return _namesArray.count;
 }
-
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"cell";
@@ -106,9 +107,15 @@ NSString* reuseIdentifier = @"cell";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: _linksArray[indexPath.row]]];
+    SFSafariViewController *svc = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString: _linksArray[indexPath.row]]];
+    svc.delegate = self;
+    [self presentViewController:svc animated:YES completion:nil];
 }
 
+
+//- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller {
+//    [self dismissViewControllerAnimated:true completion:nil];
+//}
 
 //- (void) unwindSegue{
 //    [self performSegueWithIdentifier:@"unwindFromImage" sender:self];
