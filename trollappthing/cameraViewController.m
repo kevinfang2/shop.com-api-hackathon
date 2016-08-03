@@ -88,7 +88,7 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
     
     [self.view addSubview: backButton];
     
-    UIButton *cameraButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 38, 550, 76, 76)];
+    UIButton *cameraButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 38, self.view.frame.size.height - 100, 76, 76)];
     UIImage *btnImage = [UIImage imageNamed:@"cameraButton"];
     [cameraButton setImage:btnImage forState:UIControlStateNormal];
     [cameraButton addTarget:self
