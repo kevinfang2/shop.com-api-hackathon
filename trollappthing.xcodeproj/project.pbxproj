@@ -313,6 +313,7 @@
 				TargetAttributes = {
 					0AB52A741D2213C2003B5C0A = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = W82EHQ5KSA;
 					};
 					0AB52A8D1D2213C2003B5C0A = {
 						CreatedOnToolsVersion = 7.3;
@@ -769,12 +770,12 @@
 			baseConfigurationReference = 9057D271EDA58C9543D64E8F /* Pods-trollappthing.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: shuchun Chou (7R777F59XN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: shuchun Chou (7R777F59XN)";
 				INFOPLIST_FILE = trollappthing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.kfang.trollappthing;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kfang.shapi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -785,12 +786,12 @@
 			baseConfigurationReference = BE27399CAF75420DDDA0873D /* Pods-trollappthing.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: shuchun Chou (W82EHQ5KSA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: shuchun Chou (W82EHQ5KSA)";
 				INFOPLIST_FILE = trollappthing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.kfang.trollappthing;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kfang.shapi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

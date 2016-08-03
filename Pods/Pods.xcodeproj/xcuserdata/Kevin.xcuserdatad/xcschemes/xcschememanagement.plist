@@ -8,40 +8,64 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 		<key>BFOAuth.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>CloudSight.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 		<key>Pods-trollappthing.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 		<key>Pods-trollappthingTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>Pods-trollappthingUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>6</integer>
 		</dict>
 		<key>RequestUtils.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+		<key>mopub-ios-sdk.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>061ABB0AAFB41286AAD9A1A71B818128</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>16A9500B0C179DA4F371BC4AC064E738</key>
 		<dict>
 			<key>primary</key>
@@ -53,6 +77,11 @@
 			<true/>
 		</dict>
 		<key>6A73FDF55BC2B6690DC7EF24FEE97655</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>79E797E3887977DF593E2B3812CCF1B6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
