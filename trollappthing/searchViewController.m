@@ -186,6 +186,7 @@ static NSString * const kAppSecret = @"14jeXj05O265YuxIRHGLq1lKN40odmDv0WBl2cga"
         [[NSUserDefaults standardUserDefaults] setObject:_linksArray forKey:@"linkArray"];
         [[NSUserDefaults standardUserDefaults] setObject:_imagesArray forKey:@"imageArray"];
         [[NSUserDefaults standardUserDefaults] setObject:_brandArray forKey:@"brandArray"];
+        [[NSUserDefaults standardUserDefaults] setValue:searchQuery forKey:@"title"];
 
         NSLog(@"awo3idaciejcd %lu", (unsigned long)_priceArray.count);
         
