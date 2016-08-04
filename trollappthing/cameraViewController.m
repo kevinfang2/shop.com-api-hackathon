@@ -212,12 +212,14 @@ static NSString * const kAppSecret = @"36f8k34jIGFuV7TXl0iktYh7d1IT6hz4FpbYj47G"
                          
     //                     id jsonObject = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&jsonError];
                          for (int x = 0; x<=10; x++){
-                             [_nameArray addObject:[values[x] objectForKey:@"name"]];
-                             [_priceArray addObject:[values[x] objectForKey:@"maximumPrice"]];
-                             [_linksArray addObject:[values[x] objectForKey:@"referralUrl"]];
-                             [_imagesArray addObject:[values[x] objectForKey:@"imageUrl"]];
-                             [_brandArray addObject:[values[x] objectForKey:@"brand"]];
-                             NSLog(@"awedjaowiejdo %@", [values[x] objectForKey:@"brand"]);
+                             if(!(x >= values.count)) {
+                                 [_nameArray addObject:[values[x] objectForKey:@"name"]];
+                                 [_priceArray addObject:[values[x] objectForKey:@"maximumPrice"]];
+                                 [_linksArray addObject:[values[x] objectForKey:@"referralUrl"]];
+                                 [_imagesArray addObject:[values[x] objectForKey:@"imageUrl"]];
+                                 [_brandArray addObject:[values[x] objectForKey:@"brand"]];
+                                 NSLog(@"awedjaowiejdo %@", [values[x] objectForKey:@"brand"]);
+                             }
                          }
                      }
                      
