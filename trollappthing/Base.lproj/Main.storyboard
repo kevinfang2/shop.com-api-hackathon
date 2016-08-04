@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Tb9-dC-JAj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Tb9-dC-JAj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -18,13 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="r1Z-gF-KQF">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHAPI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXw-oi-Eyh">
                                 <rect key="frame" x="224" y="214" width="152" height="60"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56G-AT-dOU">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56G-AT-dOU">
                                 <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
@@ -55,14 +58,19 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.69329522919999997" blue="0.96719316460000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="r1Z-gF-KQF" firstAttribute="centerX" secondItem="fXw-oi-Eyh" secondAttribute="centerX" id="0Tb-Mn-1Gh"/>
                             <constraint firstItem="11G-uy-go0" firstAttribute="centerX" secondItem="9tx-ds-C1l" secondAttribute="centerX" id="0oI-7J-Bed"/>
                             <constraint firstItem="fXw-oi-Eyh" firstAttribute="centerX" secondItem="9tx-ds-C1l" secondAttribute="centerX" id="44r-BQ-3zo"/>
                             <constraint firstItem="9bH-HS-Atl" firstAttribute="centerY" secondItem="9tx-ds-C1l" secondAttribute="centerY" constant="28.5" id="4ej-hK-OP1"/>
+                            <constraint firstItem="r1Z-gF-KQF" firstAttribute="leading" secondItem="9tx-ds-C1l" secondAttribute="leading" id="6Rb-ql-DrS"/>
+                            <constraint firstItem="r1Z-gF-KQF" firstAttribute="top" secondItem="9tx-ds-C1l" secondAttribute="top" id="I6s-bg-3nx"/>
+                            <constraint firstItem="r1Z-gF-KQF" firstAttribute="leading" secondItem="56G-AT-dOU" secondAttribute="leading" id="bRA-qd-kBW"/>
                             <constraint firstItem="fXw-oi-Eyh" firstAttribute="centerY" secondItem="9tx-ds-C1l" secondAttribute="centerY" constant="-56" id="jPb-zu-xs1"/>
                             <constraint firstItem="11G-uy-go0" firstAttribute="centerY" secondItem="9tx-ds-C1l" secondAttribute="centerY" constant="91" id="jlD-ff-ThM"/>
+                            <constraint firstItem="r1Z-gF-KQF" firstAttribute="bottom" secondItem="a8k-cc-2fv" secondAttribute="top" id="mmj-XG-yke"/>
                             <constraint firstItem="9bH-HS-Atl" firstAttribute="centerX" secondItem="9tx-ds-C1l" secondAttribute="centerX" id="x38-pF-46D"/>
+                            <constraint firstItem="r1Z-gF-KQF" firstAttribute="top" secondItem="56G-AT-dOU" secondAttribute="top" id="ydf-R2-lhY"/>
                         </constraints>
                     </view>
                     <connections>
@@ -378,6 +386,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="background" width="728" height="1456"/>
         <image name="upload" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
