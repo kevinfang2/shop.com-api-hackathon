@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		006400B91D50549B00728466 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006400B81D50549B00728466 /* SafariServices.framework */; };
 		00A26C1A1D45E49300007FCB /* searchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A26C191D45E49300007FCB /* searchViewController.m */; };
+		0A2991491D5524E700A18491 /* MPCollectionViewAdPlacerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2991481D5524E700A18491 /* MPCollectionViewAdPlacerView.m */; };
+		0A29914C1D55253400A18491 /* MPAdInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A29914B1D55253400A18491 /* MPAdInfo.m */; };
 		0A9A97A71D45E004003A73C2 /* ClarifaiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A97A61D45E004003A73C2 /* ClarifaiClient.m */; };
 		0AB52A7A1D2213C2003B5C0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB52A791D2213C2003B5C0A /* main.m */; };
 		0AB52A7D1D2213C2003B5C0A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB52A7C1D2213C2003B5C0A /* AppDelegate.m */; };
@@ -58,6 +60,11 @@
 		006400B81D50549B00728466 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		00A26C181D45E49300007FCB /* searchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchViewController.h; sourceTree = "<group>"; };
 		00A26C191D45E49300007FCB /* searchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchViewController.m; sourceTree = "<group>"; };
+		0A2991441D5524D400A18491 /* trollappthing-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "trollappthing-Bridging-Header.h"; sourceTree = "<group>"; };
+		0A2991471D5524E700A18491 /* MPCollectionViewAdPlacerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPCollectionViewAdPlacerView.h; sourceTree = "<group>"; };
+		0A2991481D5524E700A18491 /* MPCollectionViewAdPlacerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPCollectionViewAdPlacerView.m; sourceTree = "<group>"; };
+		0A29914A1D55253400A18491 /* MPAdInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAdInfo.h; sourceTree = "<group>"; };
+		0A29914B1D55253400A18491 /* MPAdInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAdInfo.m; sourceTree = "<group>"; };
 		0A3194821D5042DE005A3162 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		0A9A97A51D45E004003A73C2 /* ClarifaiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClarifaiClient.h; sourceTree = "<group>"; };
 		0A9A97A61D45E004003A73C2 /* ClarifaiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClarifaiClient.m; sourceTree = "<group>"; };
@@ -157,12 +164,17 @@
 				0A9A97A61D45E004003A73C2 /* ClarifaiClient.m */,
 				0AD6A2851D29D75300AE707C /* imagesViewController.h */,
 				0AD6A2861D29D75300AE707C /* imagesViewController.m */,
+				0A29914A1D55253400A18491 /* MPAdInfo.h */,
+				0A29914B1D55253400A18491 /* MPAdInfo.m */,
+				0A2991471D5524E700A18491 /* MPCollectionViewAdPlacerView.h */,
+				0A2991481D5524E700A18491 /* MPCollectionViewAdPlacerView.m */,
 				0AD6A2821D29C81100AE707C /* LandingViewController.h */,
 				0AD6A2831D29C81100AE707C /* LandingViewController.m */,
 				0AB52A841D2213C2003B5C0A /* Assets.xcassets */,
 				0AB52A861D2213C2003B5C0A /* LaunchScreen.storyboard */,
 				0AB52A891D2213C2003B5C0A /* Info.plist */,
 				0AB52A781D2213C2003B5C0A /* Supporting Files */,
+				0A2991441D5524D400A18491 /* trollappthing-Bridging-Header.h */,
 			);
 			path = trollappthing;
 			sourceTree = "<group>";
@@ -622,7 +634,9 @@
 				0AD6A2841D29C81100AE707C /* LandingViewController.m in Sources */,
 				0AFAC79C1D29E12A001B25A7 /* cameraViewController.m in Sources */,
 				0A9A97A71D45E004003A73C2 /* ClarifaiClient.m in Sources */,
+				0A29914C1D55253400A18491 /* MPAdInfo.m in Sources */,
 				0AB52A7D1D2213C2003B5C0A /* AppDelegate.m in Sources */,
+				0A2991491D5524E700A18491 /* MPCollectionViewAdPlacerView.m in Sources */,
 				0AB52A7A1D2213C2003B5C0A /* main.m in Sources */,
 				00A26C1A1D45E49300007FCB /* searchViewController.m in Sources */,
 				0AD6A2871D29D75300AE707C /* imagesViewController.m in Sources */,
@@ -698,6 +712,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -743,7 +758,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -769,6 +785,7 @@
 			baseConfigurationReference = 9057D271EDA58C9543D64E8F /* Pods-trollappthing.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = trollappthing/Info.plist;
@@ -777,6 +794,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kfang.shapi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "trollappthing/trollappthing-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -785,6 +804,7 @@
 			baseConfigurationReference = BE27399CAF75420DDDA0873D /* Pods-trollappthing.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = trollappthing/Info.plist;
@@ -793,6 +813,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kfang.shapi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "trollappthing/trollappthing-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -8,13 +8,27 @@
 
 #import "imagesViewController.h"
 #import "cameraViewController.h"
+#import "MPAdInfo.h"
 #import <SafariServices/SafariServices.h>
+#import "MPCollectionViewAdPlacer.h"
+#import "MPCollectionViewAdPlacerView.h"
+#import "MPClientAdPositioning.h"
+#import "MPNativeAdRequestTargeting.h"
+#import "MPNativeAdConstants.h"
+#import "MPStaticNativeAdRenderer.h"
+#import "MPNativeAdRendererConfiguration.h"
+#import "MPStaticNativeAdRendererSettings.h"
+#import <CoreLocation/CoreLocation.h>
 
 
-@interface imagesViewController () <SFSafariViewControllerDelegate> {
+@interface imagesViewController () <SFSafariViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate,MPCollectionViewAdPlacerDelegate> {
     __weak IBOutlet UINavigationItem *navbarItem;
     __weak IBOutlet UICollectionView *CollectionView;
 }
+
+@property (nonatomic) MPAdInfo *adInfo;
+@property (nonatomic) NSMutableArray *contentItems;
+@property (nonatomic) MPCollectionViewAdPlacer *placer;
 
 @end
 
@@ -22,6 +36,21 @@
 
 
 NSString* reuseIdentifier = @"cell";
+
+- (id)initWithAdInfo:(MPAdInfo *)info
+{
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    layout.itemSize = CGSizeMake(70, 113);
+    
+    self = [super initWithCollectionViewLayout:layout];
+    if (self) {
+        self.title = @"Collection View Ads";
+        self.adInfo = info;
+    }
+    return self;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,7 +67,71 @@ NSString* reuseIdentifier = @"cell";
     NSLog(@"aowiecdoawiecmieodm %lu",(unsigned long)_namesArray.count);
     //    NSLog(@"aoweidjoawiejdoa %@", _namesArray[0]);
 //    self.view.backgroundColor = [UIColor colorWithRed:220/255 green:220/255 blue:220/255 alpha:220/255];
+    
+    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    
+    [self setupContent];
+    [self setupAdPlacer];
 }
+
+
+- (void)dealloc
+{
+    self.collectionView.delegate = nil;
+    self.collectionView.dataSource = nil;
+}
+
+#pragma mark - Content
+
+- (void)setupContent
+{
+    self.contentItems = [NSMutableArray array];
+    
+    for (NSInteger i = 0; i < 200; i++) {
+        NSInteger r = arc4random() % 256;
+        NSInteger g = arc4random() % 256;
+        NSInteger b = arc4random() % 256;
+        [self.contentItems addObject:[UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]];
+    }
+}
+
+#pragma mark - AdPlacer
+- (void)setupAdPlacer
+{
+    // Create a targeting object to serve better ads.
+    MPNativeAdRequestTargeting *targeting = [MPNativeAdRequestTargeting targeting];
+    targeting.desiredAssets = [NSSet setWithObjects:kAdTitleKey, kAdIconImageKey, kAdCTATextKey, nil];
+    targeting.location = [[CLLocation alloc] initWithLatitude:37.7793 longitude:-122.4175];
+    
+    // Create and configure a renderer configuration for native ads.
+    MPStaticNativeAdRendererSettings *settings = [[MPStaticNativeAdRendererSettings alloc] init];
+    settings.renderingViewClass = [MPCollectionViewAdPlacerView class];
+    settings.viewSizeHandler = ^(CGFloat maximumWidth) {
+        return CGSizeMake(70.0f, 113.0f);
+    };
+    
+    MPNativeAdRendererConfiguration *config = [MPStaticNativeAdRenderer rendererConfigurationWithRendererSettings:settings];
+    
+    // Create a collection view ad placer that uses server-side ad positioning.
+    self.placer = [MPCollectionViewAdPlacer placerWithCollectionView:self.collectionView viewController:self rendererConfigurations:@[config]];
+    
+    // If you wish to use client-side ad positioning rather than configuring your ad unit on the
+    // MoPub website, comment out the line above and use the code below instead.
+    
+    /*
+     // Create an ad positioning object and register the index paths where ads should be displayed.
+     MPClientAdPositioning *positioning = [MPClientAdPositioning positioning];
+     [positioning addFixedIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+     [positioning enableRepeatingPositionsWithInterval:15];
+     
+     self.placer = [MPCollectionViewAdPlacer placerWithCollectionView:self.collectionView viewController:self adPositioning:positioning rendererConfigurations:@[config]];
+     */
+    
+    self.placer.delegate = self;
+    // Load ads (using a test ad unit ID). Feel free to replace this ad unit ID with your own.
+    [self.placer loadAdsForAdUnitID:self.adInfo.ID targeting:targeting];
+}
+
 
 - (IBAction)reinitializeArrays:(id)sender {
     NSArray *emptyArray;
@@ -51,12 +144,13 @@ NSString* reuseIdentifier = @"cell";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     NSLog(@"apwoedcawed %lu", (unsigned long)_pricesArray.count);
-    return _namesArray.count;
+    return self.contentItems.count;
 }
+
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"cell";
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    UICollectionViewCell *cell = [collectionView mp_dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
     cell.contentView.layer.cornerRadius = 2.0f;
     cell.contentView.layer.borderWidth = 1.0f;

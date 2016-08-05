@@ -173,11 +173,14 @@ static NSString * const kAppSecret = @"14jeXj05O265YuxIRHGLq1lKN40odmDv0WBl2cga"
             //             NSLog(@"%@", NSStringFromClass([values[0] class]));
             NSLog(@"%@", values[0]); //change to watev, this is the first one, "Tools"
             for (int x = 0; x <= 11; x++){
-                [_nameArray addObject:[values[x] objectForKey:@"name"]];
-                [_priceArray addObject:[values[x] objectForKey:@"maximumPrice"]];
-                [_linksArray addObject:[values[x] objectForKey:@"referralUrl"]];
-                [_imagesArray addObject:[values[x] objectForKey:@"imageUrl"]];
-                [_brandArray addObject:[values[x] objectForKey:@"brand"]];
+                if(!(x >= values.count)) {
+                    [_nameArray addObject:[values[x] objectForKey:@"name"]];
+                    [_priceArray addObject:[values[x] objectForKey:@"maximumPrice"]];
+                    [_linksArray addObject:[values[x] objectForKey:@"referralUrl"]];
+                    [_imagesArray addObject:[values[x] objectForKey:@"imageUrl"]];
+                    [_brandArray addObject:[values[x] objectForKey:@"brand"]];
+                    NSLog(@"awedjaowiejdo %@", [values[x] objectForKey:@"brand"]);
+                }
             }
         }
             
