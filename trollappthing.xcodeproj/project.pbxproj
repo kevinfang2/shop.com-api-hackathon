@@ -68,7 +68,7 @@
 		0A3194821D5042DE005A3162 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		0A9A97A51D45E004003A73C2 /* ClarifaiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClarifaiClient.h; sourceTree = "<group>"; };
 		0A9A97A61D45E004003A73C2 /* ClarifaiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClarifaiClient.m; sourceTree = "<group>"; };
-		0AB52A751D2213C2003B5C0A /* trollappthing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trollappthing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AB52A751D2213C2003B5C0A /* Shapi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shapi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AB52A791D2213C2003B5C0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0AB52A7B1D2213C2003B5C0A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0AB52A7C1D2213C2003B5C0A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 		0AB52A761D2213C2003B5C0A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0AB52A751D2213C2003B5C0A /* trollappthing.app */,
+				0AB52A751D2213C2003B5C0A /* Shapi.app */,
 				0AB52A8E1D2213C2003B5C0A /* trollappthingTests.xctest */,
 				0AB52A991D2213C2003B5C0A /* trollappthingUITests.xctest */,
 			);
@@ -245,9 +245,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0AB52A741D2213C2003B5C0A /* trollappthing */ = {
+		0AB52A741D2213C2003B5C0A /* Shapi */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0AB52AA21D2213C2003B5C0A /* Build configuration list for PBXNativeTarget "trollappthing" */;
+			buildConfigurationList = 0AB52AA21D2213C2003B5C0A /* Build configuration list for PBXNativeTarget "Shapi" */;
 			buildPhases = (
 				483542DC1AFA4959BE876208 /* 📦 Check Pods Manifest.lock */,
 				61C8CCCFD764617F9E270C6D /* [CP] Check Pods Manifest.lock */,
@@ -263,9 +263,9 @@
 			);
 			dependencies = (
 			);
-			name = trollappthing;
+			name = Shapi;
 			productName = trollappthing;
-			productReference = 0AB52A751D2213C2003B5C0A /* trollappthing.app */;
+			productReference = 0AB52A751D2213C2003B5C0A /* Shapi.app */;
 			productType = "com.apple.product-type.application";
 		};
 		0AB52A8D1D2213C2003B5C0A /* trollappthingTests */ = {
@@ -349,7 +349,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0AB52A741D2213C2003B5C0A /* trollappthing */,
+				0AB52A741D2213C2003B5C0A /* Shapi */,
 				0AB52A8D1D2213C2003B5C0A /* trollappthingTests */,
 				0AB52A981D2213C2003B5C0A /* trollappthingUITests */,
 			);
@@ -664,12 +664,12 @@
 /* Begin PBXTargetDependency section */
 		0AB52A901D2213C2003B5C0A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0AB52A741D2213C2003B5C0A /* trollappthing */;
+			target = 0AB52A741D2213C2003B5C0A /* Shapi */;
 			targetProxy = 0AB52A8F1D2213C2003B5C0A /* PBXContainerItemProxy */;
 		};
 		0AB52A9B1D2213C2003B5C0A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0AB52A741D2213C2003B5C0A /* trollappthing */;
+			target = 0AB52A741D2213C2003B5C0A /* Shapi */;
 			targetProxy = 0AB52A9A1D2213C2003B5C0A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -879,7 +879,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0AB52AA21D2213C2003B5C0A /* Build configuration list for PBXNativeTarget "trollappthing" */ = {
+		0AB52AA21D2213C2003B5C0A /* Build configuration list for PBXNativeTarget "Shapi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0AB52AA31D2213C2003B5C0A /* Debug */,
