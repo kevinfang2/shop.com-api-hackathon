@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+@class MPAdInfo;
 
-@interface imagesViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface imagesViewController : UICollectionViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 @property NSMutableArray *namesArray;
 @property NSMutableArray *pricesArray;
 @property NSMutableArray *linksArray;
 @property NSMutableArray *imagesArray;
 @property NSMutableArray *brandArray;
+
+- (id)initWithAdInfo:(MPAdInfo *)info;
+
 @end

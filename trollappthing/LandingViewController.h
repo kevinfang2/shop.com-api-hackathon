@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MPAdView.h"
 
-@interface LandingViewController : UIViewController <UINavigationControllerDelegate>
+@interface LandingViewController : UIViewController <UINavigationControllerDelegate, MPAdViewDelegate>
+
+@property (nonatomic, retain) MPAdView *adView;
 
 @end
