@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0AB52A741D2213C2003B5C0A"
-               BuildableName = "trollappthing.app"
-               BlueprintName = "trollappthing"
+               BuildableName = "Shapi.app"
+               BlueprintName = "Shapi"
                ReferencedContainer = "container:trollappthing.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -53,8 +53,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0AB52A741D2213C2003B5C0A"
-            BuildableName = "trollappthing.app"
-            BlueprintName = "trollappthing"
+            BuildableName = "Shapi.app"
+            BlueprintName = "Shapi"
             ReferencedContainer = "container:trollappthing.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -76,8 +76,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0AB52A741D2213C2003B5C0A"
-            BuildableName = "trollappthing.app"
-            BlueprintName = "trollappthing"
+            BuildableName = "Shapi.app"
+            BlueprintName = "Shapi"
             ReferencedContainer = "container:trollappthing.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -95,8 +95,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0AB52A741D2213C2003B5C0A"
-            BuildableName = "trollappthing.app"
-            BlueprintName = "trollappthing"
+            BuildableName = "Shapi.app"
+            BlueprintName = "Shapi"
             ReferencedContainer = "container:trollappthing.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

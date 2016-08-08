@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		006400B91D50549B00728466 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006400B81D50549B00728466 /* SafariServices.framework */; };
+		0076AB621D584E3B00869B2B /* MPAdBrowserController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0076AB611D584E3B00869B2B /* MPAdBrowserController.xib */; };
 		00A26C1A1D45E49300007FCB /* searchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A26C191D45E49300007FCB /* searchViewController.m */; };
 		0A2991491D5524E700A18491 /* MPCollectionViewAdPlacerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2991481D5524E700A18491 /* MPCollectionViewAdPlacerView.m */; };
 		0A29914C1D55253400A18491 /* MPAdInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A29914B1D55253400A18491 /* MPAdInfo.m */; };
@@ -58,6 +59,7 @@
 		00127B6D1D5050AD00E5F09A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		00127B6E1D5050AD00E5F09A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		006400B81D50549B00728466 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		0076AB611D584E3B00869B2B /* MPAdBrowserController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MPAdBrowserController.xib; path = "Pods/mopub-ios-sdk/MoPubSDK/Internal/Common/MPAdBrowserController.xib"; sourceTree = "<group>"; };
 		00A26C181D45E49300007FCB /* searchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchViewController.h; sourceTree = "<group>"; };
 		00A26C191D45E49300007FCB /* searchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchViewController.m; sourceTree = "<group>"; };
 		0A2991441D5524D400A18491 /* trollappthing-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "trollappthing-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		0AB52A6C1D2213C2003B5C0A = {
 			isa = PBXGroup;
 			children = (
+				0076AB611D584E3B00869B2B /* MPAdBrowserController.xib */,
 				0AB52A771D2213C2003B5C0A /* trollappthing */,
 				0AB52A911D2213C2003B5C0A /* trollappthingTests */,
 				0AB52A9C1D2213C2003B5C0A /* trollappthingUITests */,
@@ -362,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AB52A881D2213C2003B5C0A /* LaunchScreen.storyboard in Resources */,
+				0076AB621D584E3B00869B2B /* MPAdBrowserController.xib in Resources */,
 				0AB52A851D2213C2003B5C0A /* Assets.xcassets in Resources */,
 				0AB52A831D2213C2003B5C0A /* Main.storyboard in Resources */,
 			);
