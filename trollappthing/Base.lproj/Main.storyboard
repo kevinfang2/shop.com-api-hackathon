@@ -342,8 +342,6 @@
         <!--Items-->
         <scene sceneID="avr-pu-3kN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oFA-AA-YXV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="wZS-XT-D6G" userLabel="Exit" sceneMemberID="exit"/>
                 <viewController id="qeG-ep-C2L" customClass="imagesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jfa-h8-lcR"/>
@@ -353,7 +351,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uPu-H6-8aw">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uPu-H6-8aw">
                                 <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -467,12 +465,20 @@
                         <outlet property="navbarItem" destination="p8p-XM-mcO" id="4EQ-tx-FPG"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oFA-AA-YXV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="wZS-XT-D6G" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2029" y="372"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uFH-yw-aSN">
             <objects>
+                <navigationController id="xnm-0f-a3E" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xJp-Y4-Frk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wPP-XM-Ali" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="xhz-Xu-Yew">
                     <rect key="frame" x="0.0" y="0.0" width="560" height="471"/>
@@ -549,14 +555,8 @@
                         <outlet property="delegate" destination="qeG-ep-C2L" id="pGU-Bd-dda"/>
                     </connections>
                 </collectionView>
-                <navigationController id="xnm-0f-a3E" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xJp-Y4-Frk">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                </navigationController>
             </objects>
-            <point key="canvasLocation" x="1135" y="355"/>
+            <point key="canvasLocation" x="1185" y="351"/>
         </scene>
     </scenes>
     <resources>
@@ -564,6 +564,6 @@
         <image name="upload" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KTq-qb-ZUZ"/>
+        <segue reference="ffI-Ql-fV8"/>
     </inferredMetricsTieBreakers>
 </document>
