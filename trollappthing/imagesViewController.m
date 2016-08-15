@@ -19,6 +19,7 @@
 #import "MPNativeAdRendererConfiguration.h"
 #import "MPStaticNativeAdRendererSettings.h"
 #import <CoreLocation/CoreLocation.h>
+#import "MPCollectionViewAdPlacerCell.h"
 
 
 @interface imagesViewController () <SFSafariViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate,MPCollectionViewAdPlacerDelegate> {
@@ -54,6 +55,9 @@ NSString* reuseIdentifier = @"cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+  
+//    [self setupContent];
+    
     CollectionView.dataSource = self;
     CollectionView.delegate = self;
     
@@ -68,11 +72,14 @@ NSString* reuseIdentifier = @"cell";
     //    NSLog(@"aoweidjoawiejdoa %@", _namesArray[0]);
 //    self.view.backgroundColor = [UIColor colorWithRed:220/255 green:220/255 blue:220/255 alpha:220/255];
     
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [CollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
-    [self setupContent];
+    [CollectionView registerClass:[MPCollectionViewAdPlacerCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    
     [self setupAdPlacer];
 }
+
+
 
 
 - (void)dealloc
@@ -81,28 +88,14 @@ NSString* reuseIdentifier = @"cell";
     self.collectionView.dataSource = nil;
 }
 
-#pragma mark - Content
-
-- (void)setupContent
-{
-    self.contentItems = [NSMutableArray array];
-    
-    for (NSInteger i = 0; i < 200; i++) {
-        NSInteger r = arc4random() % 256;
-        NSInteger g = arc4random() % 256;
-        NSInteger b = arc4random() % 256;
-        [self.contentItems addObject:[UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]];
-    }
-}
-
 #pragma mark - AdPlacer
 - (void)setupAdPlacer
 {
     // Create a targeting object to serve better ads.
     MPNativeAdRequestTargeting *targeting = [MPNativeAdRequestTargeting targeting];
     targeting.desiredAssets = [NSSet setWithObjects:kAdTitleKey, kAdIconImageKey, kAdCTATextKey, nil];
-    targeting.location = [[CLLocation alloc] initWithLatitude:37.7793 longitude:-122.4175];
-    
+    targeting.desiredAssets = [NSSet setWithObjects:kAdIconImageKey, kAdMainImageKey, kAdCTATextKey, kAdTextKey, kAdTitleKey, nil];
+
     // Create and configure a renderer configuration for native ads.
     MPStaticNativeAdRendererSettings *settings = [[MPStaticNativeAdRendererSettings alloc] init];
     settings.renderingViewClass = [MPCollectionViewAdPlacerView class];
@@ -114,6 +107,8 @@ NSString* reuseIdentifier = @"cell";
     
     // Create a collection view ad placer that uses server-side ad positioning.
     self.placer = [MPCollectionViewAdPlacer placerWithCollectionView:self.collectionView viewController:self rendererConfigurations:@[config]];
+    
+    [self.placer loadAdsForAdUnitID:@"e19c2fefed4143f181d3cb35c8f7d49c" targeting:targeting];
     
     // If you wish to use client-side ad positioning rather than configuring your ad unit on the
     // MoPub website, comment out the line above and use the code below instead.
@@ -129,8 +124,36 @@ NSString* reuseIdentifier = @"cell";
     
     self.placer.delegate = self;
     // Load ads (using a test ad unit ID). Feel free to replace this ad unit ID with your own.
-    [self.placer loadAdsForAdUnitID:self.adInfo.ID targeting:targeting];
+    [self.placer loadAdsForAdUnitID:@"e19c2fefed4143f181d3cb35c8f7d49c"     targeting:targeting];
 }
+
+
+- (void)nativeAdWillPresentModalForCollectionViewAdPlacer:(MPCollectionViewAdPlacer *)placer
+{
+    NSLog(@"Collection view ad placer will present modal.");
+}
+
+- (void)nativeAdDidDismissModalForCollectionViewAdPlacer:(MPCollectionViewAdPlacer *)placer
+{
+    NSLog(@"Collection view ad placer did dismiss modal.");
+}
+
+- (void)nativeAdWillLeaveApplicationFromCollectionViewAdPlacer:(MPCollectionViewAdPlacer *)placer
+{
+    NSLog(@"Collection view ad placer will leave application.");
+}
+
+//- (void)setupContent
+//{
+//    self.contentItems = [NSMutableArray array];
+//    
+//    for (NSInteger i = 0; i < 200; i++) {
+//        NSInteger r = arc4random() % 256;
+//        NSInteger g = arc4random() % 256;
+//        NSInteger b = arc4random() % 256;
+//        [self.contentItems addObject:[UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]];
+//    }
+//}
 
 
 - (IBAction)reinitializeArrays:(id)sender {
@@ -144,14 +167,16 @@ NSString* reuseIdentifier = @"cell";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     NSLog(@"apwoedcawed %lu", (unsigned long)_pricesArray.count);
-    return self.contentItems.count;
+    
+    return self.pricesArray.count;
 }
 
 
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *identifier = @"cell";
-    UICollectionViewCell *cell = [collectionView mp_dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-    
+    UICollectionViewCell *cell = [collectionView mp_dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    cell.backgroundColor = self.contentItems[indexPath.item];
+
     cell.contentView.layer.cornerRadius = 2.0f;
     cell.contentView.layer.borderWidth = 1.0f;
     cell.contentView.layer.borderColor = [UIColor clearColor].CGColor;
@@ -163,7 +188,6 @@ NSString* reuseIdentifier = @"cell";
     cell.layer.shadowOpacity = 1.0f;
     cell.layer.masksToBounds = NO;
     cell.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:cell.bounds cornerRadius:cell.contentView.layer.cornerRadius].CGPath;
-    
     
     
     NSLog(@"awied %@", _pricesArray[indexPath.row]);
@@ -188,19 +212,18 @@ NSString* reuseIdentifier = @"cell";
     
     
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:100];
-    imageView.layer.cornerRadius = 43;
+    imageView.layer.cornerRadius = 5;
     imageView.layer.masksToBounds = YES;
 
     NSLog(@"fwedwe %@", _imagesArray[indexPath.row]);
     NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:_imagesArray[indexPath.row]]];
     UIImage * image = [UIImage imageWithData: imageData];
     imageView.image = image;
-    //    cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photoframe"]];
-//    cell.backgroundColor = [UIColor colorWithRed:0.937 green:0.870 blue:1.0 alpha:1.0];
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
     SFSafariViewController *svc = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString: _linksArray[indexPath.row]]];
     svc.delegate = self;
     [self presentViewController:svc animated:YES completion:nil];
@@ -219,20 +242,5 @@ NSString* reuseIdentifier = @"cell";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-//
-//-(BOOL)prefersStatusBarHidden{
-//    return YES;
-//}
-
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

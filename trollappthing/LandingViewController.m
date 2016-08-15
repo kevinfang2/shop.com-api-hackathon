@@ -25,19 +25,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.adView = [[MPAdView alloc] initWithAdUnitId:@"ac854e9873274e2db64142a9c041f905"
-                         size:MOPUB_BANNER_SIZE];
-//    self.adView.frame = CGRectMake(dHeight, dWidth - 160, 320, 50);
-
-    self.adView.delegate = self;
-    CGRect frame = self.adView.frame;
-    CGSize size = [self.adView adContentViewSize];
-    frame.origin.y = [[UIScreen mainScreen] applicationFrame].size.height - size.height;
-    self.adView.frame = frame;
-    [self.view addSubview:self.adView];
-    [self.adView loadAd];
-
-    
     searchButton.backgroundColor = [UIColor whiteColor];
     searchButton.layer.cornerRadius = 5;
     searchButton.layer.masksToBounds = YES;
@@ -63,10 +50,6 @@
 //    return YES;
 //}
 
-#pragma mark - <MPAdViewDelegate>
-- (UIViewController *)viewControllerForPresentingModalView {
-    return self;
-}
 
 -(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
     

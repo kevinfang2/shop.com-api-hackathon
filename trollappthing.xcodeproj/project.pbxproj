@@ -12,6 +12,7 @@
 		00A26C1A1D45E49300007FCB /* searchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A26C191D45E49300007FCB /* searchViewController.m */; };
 		0A2991491D5524E700A18491 /* MPCollectionViewAdPlacerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2991481D5524E700A18491 /* MPCollectionViewAdPlacerView.m */; };
 		0A29914C1D55253400A18491 /* MPAdInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A29914B1D55253400A18491 /* MPAdInfo.m */; };
+		0A8029EE1D5FDF5C00BDC137 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8029ED1D5FDF5C00BDC137 /* CoreTelephony.framework */; };
 		0A9A97A71D45E004003A73C2 /* ClarifaiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A97A61D45E004003A73C2 /* ClarifaiClient.m */; };
 		0AB52A7A1D2213C2003B5C0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB52A791D2213C2003B5C0A /* main.m */; };
 		0AB52A7D1D2213C2003B5C0A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB52A7C1D2213C2003B5C0A /* AppDelegate.m */; };
@@ -22,6 +23,23 @@
 		0AB52A9E1D2213C2003B5C0A /* trollappthingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB52A9D1D2213C2003B5C0A /* trollappthingUITests.m */; };
 		0AD6A2841D29C81100AE707C /* LandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD6A2831D29C81100AE707C /* LandingViewController.m */; };
 		0AD6A2871D29D75300AE707C /* imagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD6A2861D29D75300AE707C /* imagesViewController.m */; };
+		0AE8BF651D61160C00C38BB7 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00127B5E1D50505A00E5F09A /* AdSupport.framework */; };
+		0AE8BF671D61161300C38BB7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE8BF661D61161300C38BB7 /* AudioToolbox.framework */; };
+		0AE8BF691D61161A00C38BB7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE8BF681D61161A00C38BB7 /* AVFoundation.framework */; };
+		0AE8BF6A1D61162200C38BB7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00127B601D50506300E5F09A /* CoreGraphics.framework */; };
+		0AE8BF6B1D61162B00C38BB7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00127B611D50506300E5F09A /* CoreLocation.framework */; };
+		0AE8BF6C1D61163500C38BB7 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3194821D5042DE005A3162 /* iAd.framework */; };
+		0AE8BF6D1D61163F00C38BB7 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00127B6A1D5050AD00E5F09A /* MediaPlayer.framework */; };
+		0AE8BF6F1D61164700C38BB7 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE8BF6E1D61164700C38BB7 /* MessageUI.framework */; };
+		0AE8BF711D61165000C38BB7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE8BF701D61165000C38BB7 /* MobileCoreServices.framework */; };
+		0AE8BF731D61165700C38BB7 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE8BF721D61165700C38BB7 /* PassKit.framework */; };
+		0AE8BF741D61165E00C38BB7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00127B6B1D5050AD00E5F09A /* QuartzCore.framework */; };
+		0AE8BF761D61166500C38BB7 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE8BF751D61166500C38BB7 /* Social.framework */; };
+		0AE8BF771D61166A00C38BB7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00127B6C1D5050AD00E5F09A /* StoreKit.framework */; };
+		0AE8BF781D61167100C38BB7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00127B6D1D5050AD00E5F09A /* SystemConfiguration.framework */; };
+		0AE8BF7A1D61167700C38BB7 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE8BF791D61167700C38BB7 /* Twitter.framework */; };
+		0AE8BF801D6116DD00C38BB7 /* MPAdInfo.h in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8BF7C1D6116DD00C38BB7 /* MPAdInfo.h */; };
+		0AE8BF811D6116DD00C38BB7 /* MPCollectionViewAdPlacerView.h in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8BF7E1D6116DD00C38BB7 /* MPCollectionViewAdPlacerView.h */; };
 		0AFAC79C1D29E12A001B25A7 /* cameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AFAC79B1D29E12A001B25A7 /* cameraViewController.m */; };
 		5062DFC4471133ABDDDF32E4 /* libPods-trollappthingUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 676341FF75031407AC359521 /* libPods-trollappthingUITests.a */; };
 		8790F76481DC03E08C6AD60B /* libPods-trollappthing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5894FB5426299594A39FF0AB /* libPods-trollappthing.a */; };
@@ -63,11 +81,12 @@
 		00A26C181D45E49300007FCB /* searchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchViewController.h; sourceTree = "<group>"; };
 		00A26C191D45E49300007FCB /* searchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchViewController.m; sourceTree = "<group>"; };
 		0A2991441D5524D400A18491 /* trollappthing-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "trollappthing-Bridging-Header.h"; sourceTree = "<group>"; };
-		0A2991471D5524E700A18491 /* MPCollectionViewAdPlacerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPCollectionViewAdPlacerView.h; sourceTree = "<group>"; };
 		0A2991481D5524E700A18491 /* MPCollectionViewAdPlacerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPCollectionViewAdPlacerView.m; sourceTree = "<group>"; };
 		0A29914A1D55253400A18491 /* MPAdInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAdInfo.h; sourceTree = "<group>"; };
 		0A29914B1D55253400A18491 /* MPAdInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAdInfo.m; sourceTree = "<group>"; };
 		0A3194821D5042DE005A3162 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		0A8029EC1D5FDAC000BDC137 /* MPCollectionViewAdPlacerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPCollectionViewAdPlacerView.h; sourceTree = "<group>"; };
+		0A8029ED1D5FDF5C00BDC137 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		0A9A97A51D45E004003A73C2 /* ClarifaiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClarifaiClient.h; sourceTree = "<group>"; };
 		0A9A97A61D45E004003A73C2 /* ClarifaiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClarifaiClient.m; sourceTree = "<group>"; };
 		0AB52A751D2213C2003B5C0A /* Shapi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shapi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +107,17 @@
 		0AD6A2831D29C81100AE707C /* LandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingViewController.m; sourceTree = "<group>"; };
 		0AD6A2851D29D75300AE707C /* imagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imagesViewController.h; sourceTree = "<group>"; };
 		0AD6A2861D29D75300AE707C /* imagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imagesViewController.m; sourceTree = "<group>"; };
+		0AE8BF661D61161300C38BB7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		0AE8BF681D61161A00C38BB7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0AE8BF6E1D61164700C38BB7 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		0AE8BF701D61165000C38BB7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		0AE8BF721D61165700C38BB7 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		0AE8BF751D61166500C38BB7 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		0AE8BF791D61167700C38BB7 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		0AE8BF7C1D6116DD00C38BB7 /* MPAdInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MPAdInfo.h; path = trollappthing/MPAdInfo.h; sourceTree = "<group>"; };
+		0AE8BF7D1D6116DD00C38BB7 /* MPAdInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MPAdInfo.m; path = trollappthing/MPAdInfo.m; sourceTree = "<group>"; };
+		0AE8BF7E1D6116DD00C38BB7 /* MPCollectionViewAdPlacerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MPCollectionViewAdPlacerView.h; path = trollappthing/MPCollectionViewAdPlacerView.h; sourceTree = "<group>"; };
+		0AE8BF7F1D6116DD00C38BB7 /* MPCollectionViewAdPlacerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MPCollectionViewAdPlacerView.m; path = trollappthing/MPCollectionViewAdPlacerView.m; sourceTree = "<group>"; };
 		0AFAC79A1D29E12A001B25A7 /* cameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cameraViewController.h; sourceTree = "<group>"; };
 		0AFAC79B1D29E12A001B25A7 /* cameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cameraViewController.m; sourceTree = "<group>"; };
 		1B40208D4CFDED030AC3237D /* Pods-trollappthingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trollappthingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-trollappthingTests/Pods-trollappthingTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +136,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AE8BF7A1D61167700C38BB7 /* Twitter.framework in Frameworks */,
+				0AE8BF781D61167100C38BB7 /* SystemConfiguration.framework in Frameworks */,
+				0AE8BF771D61166A00C38BB7 /* StoreKit.framework in Frameworks */,
+				0AE8BF761D61166500C38BB7 /* Social.framework in Frameworks */,
+				0AE8BF741D61165E00C38BB7 /* QuartzCore.framework in Frameworks */,
+				0AE8BF731D61165700C38BB7 /* PassKit.framework in Frameworks */,
+				0AE8BF711D61165000C38BB7 /* MobileCoreServices.framework in Frameworks */,
+				0AE8BF6F1D61164700C38BB7 /* MessageUI.framework in Frameworks */,
+				0AE8BF6D1D61163F00C38BB7 /* MediaPlayer.framework in Frameworks */,
+				0AE8BF6C1D61163500C38BB7 /* iAd.framework in Frameworks */,
+				0AE8BF6B1D61162B00C38BB7 /* CoreLocation.framework in Frameworks */,
+				0AE8BF6A1D61162200C38BB7 /* CoreGraphics.framework in Frameworks */,
+				0AE8BF691D61161A00C38BB7 /* AVFoundation.framework in Frameworks */,
+				0AE8BF671D61161300C38BB7 /* AudioToolbox.framework in Frameworks */,
+				0AE8BF651D61160C00C38BB7 /* AdSupport.framework in Frameworks */,
+				0A8029EE1D5FDF5C00BDC137 /* CoreTelephony.framework in Frameworks */,
 				006400B91D50549B00728466 /* SafariServices.framework in Frameworks */,
 				8790F76481DC03E08C6AD60B /* libPods-trollappthing.a in Frameworks */,
 			);
@@ -133,6 +179,10 @@
 		0AB52A6C1D2213C2003B5C0A = {
 			isa = PBXGroup;
 			children = (
+				0AE8BF7C1D6116DD00C38BB7 /* MPAdInfo.h */,
+				0AE8BF7D1D6116DD00C38BB7 /* MPAdInfo.m */,
+				0AE8BF7E1D6116DD00C38BB7 /* MPCollectionViewAdPlacerView.h */,
+				0AE8BF7F1D6116DD00C38BB7 /* MPCollectionViewAdPlacerView.m */,
 				0076AB611D584E3B00869B2B /* MPAdBrowserController.xib */,
 				0AB52A771D2213C2003B5C0A /* trollappthing */,
 				0AB52A911D2213C2003B5C0A /* trollappthingTests */,
@@ -169,7 +219,7 @@
 				0AD6A2861D29D75300AE707C /* imagesViewController.m */,
 				0A29914A1D55253400A18491 /* MPAdInfo.h */,
 				0A29914B1D55253400A18491 /* MPAdInfo.m */,
-				0A2991471D5524E700A18491 /* MPCollectionViewAdPlacerView.h */,
+				0A8029EC1D5FDAC000BDC137 /* MPCollectionViewAdPlacerView.h */,
 				0A2991481D5524E700A18491 /* MPCollectionViewAdPlacerView.m */,
 				0AD6A2821D29C81100AE707C /* LandingViewController.h */,
 				0AD6A2831D29C81100AE707C /* LandingViewController.m */,
@@ -211,6 +261,14 @@
 		2530D7BDDBFEE0C0D90A72E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0AE8BF791D61167700C38BB7 /* Twitter.framework */,
+				0AE8BF751D61166500C38BB7 /* Social.framework */,
+				0AE8BF721D61165700C38BB7 /* PassKit.framework */,
+				0AE8BF701D61165000C38BB7 /* MobileCoreServices.framework */,
+				0AE8BF6E1D61164700C38BB7 /* MessageUI.framework */,
+				0AE8BF681D61161A00C38BB7 /* AVFoundation.framework */,
+				0AE8BF661D61161300C38BB7 /* AudioToolbox.framework */,
+				0A8029ED1D5FDF5C00BDC137 /* CoreTelephony.framework */,
 				006400B81D50549B00728466 /* SafariServices.framework */,
 				00127B681D5050AD00E5F09A /* EventKitUI.framework */,
 				00127B691D5050AD00E5F09A /* Foundation.framework */,
@@ -635,12 +693,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AE8BF801D6116DD00C38BB7 /* MPAdInfo.h in Sources */,
+				0A29914C1D55253400A18491 /* MPAdInfo.m in Sources */,
+				0AE8BF811D6116DD00C38BB7 /* MPCollectionViewAdPlacerView.h in Sources */,
+				0A2991491D5524E700A18491 /* MPCollectionViewAdPlacerView.m in Sources */,
 				0AD6A2841D29C81100AE707C /* LandingViewController.m in Sources */,
 				0AFAC79C1D29E12A001B25A7 /* cameraViewController.m in Sources */,
 				0A9A97A71D45E004003A73C2 /* ClarifaiClient.m in Sources */,
-				0A29914C1D55253400A18491 /* MPAdInfo.m in Sources */,
 				0AB52A7D1D2213C2003B5C0A /* AppDelegate.m in Sources */,
-				0A2991491D5524E700A18491 /* MPCollectionViewAdPlacerView.m in Sources */,
 				0AB52A7A1D2213C2003B5C0A /* main.m in Sources */,
 				00A26C1A1D45E49300007FCB /* searchViewController.m in Sources */,
 				0AD6A2871D29D75300AE707C /* imagesViewController.m in Sources */,
