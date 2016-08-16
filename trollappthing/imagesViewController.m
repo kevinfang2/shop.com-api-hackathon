@@ -30,6 +30,8 @@
 @property (nonatomic) MPAdInfo *adInfo;
 @property (nonatomic) NSMutableArray *contentItems;
 @property (nonatomic) MPCollectionViewAdPlacer *placer;
+@property (nonatomic) CGFloat cellWidth;
+@property (nonatomic) CGFloat cellHeight;
 
 @end
 
@@ -100,7 +102,7 @@ NSString* reuseIdentifier = @"cell";
     MPStaticNativeAdRendererSettings *settings = [[MPStaticNativeAdRendererSettings alloc] init];
     settings.renderingViewClass = [MPCollectionViewAdPlacerView class];
     settings.viewSizeHandler = ^(CGFloat maximumWidth) {
-        return CGSizeMake(70.0f, 113.0f);
+        return CGSizeMake(self.cellWidth, self.cellHeight);
     };
     
     MPNativeAdRendererConfiguration *config = [MPStaticNativeAdRenderer rendererConfigurationWithRendererSettings:settings];
@@ -108,23 +110,15 @@ NSString* reuseIdentifier = @"cell";
     // Create a collection view ad placer that uses server-side ad positioning.
     self.placer = [MPCollectionViewAdPlacer placerWithCollectionView:self.collectionView viewController:self rendererConfigurations:@[config]];
     
-    [self.placer loadAdsForAdUnitID:@"e19c2fefed4143f181d3cb35c8f7d49c" targeting:targeting];
     
-    // If you wish to use client-side ad positioning rather than configuring your ad unit on the
-    // MoPub website, comment out the line above and use the code below instead.
+//     MPClientAdPositioning *positioning = [MPClientAdPositioning positioning];
+//     [positioning addFixedIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+//     [positioning enableRepeatingPositionsWithInterval:15];
     
-    /*
-     // Create an ad positioning object and register the index paths where ads should be displayed.
-     MPClientAdPositioning *positioning = [MPClientAdPositioning positioning];
-     [positioning addFixedIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-     [positioning enableRepeatingPositionsWithInterval:15];
-     
-     self.placer = [MPCollectionViewAdPlacer placerWithCollectionView:self.collectionView viewController:self adPositioning:positioning rendererConfigurations:@[config]];
-     */
+//     self.placer = [MPCollectionViewAdPlacer placerWithCollectionView:CollectionView viewController:self adPositioning:positioning rendererConfigurations:@[config]];
     
     self.placer.delegate = self;
-    // Load ads (using a test ad unit ID). Feel free to replace this ad unit ID with your own.
-    [self.placer loadAdsForAdUnitID:@"e19c2fefed4143f181d3cb35c8f7d49c"     targeting:targeting];
+    [self.placer loadAdsForAdUnitID:@"e19c2fefed4143f181d3cb35c8f7d49c" targeting:targeting];
 }
 
 
@@ -188,7 +182,8 @@ NSString* reuseIdentifier = @"cell";
     cell.layer.shadowOpacity = 1.0f;
     cell.layer.masksToBounds = NO;
     cell.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:cell.bounds cornerRadius:cell.contentView.layer.cornerRadius].CGPath;
-    
+    self.cellWidth = cell.frame.size.width;
+    self.cellHeight = cell.frame.size.height;
     
     NSLog(@"awied %@", _pricesArray[indexPath.row]);
     UILabel *costLabel = (UILabel *)[cell viewWithTag:96];

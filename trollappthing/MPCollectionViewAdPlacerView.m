@@ -5,6 +5,7 @@
 //  Copyright (c) 2014 MoPub. All rights reserved.
 //
 
+
 #import "MPCollectionViewAdPlacerView.h"
 
 @implementation MPCollectionViewAdPlacerView
